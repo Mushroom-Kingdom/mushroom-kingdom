@@ -1,4 +1,4 @@
 module.exports = {
-  Mushrooms: require("./mushroom"),
-  Users: require("./user"),
+  Mushroom: require("./mushroom"),
+  User: require("./user"),
 };
