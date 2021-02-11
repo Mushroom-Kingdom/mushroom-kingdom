@@ -1,15 +1,17 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { FormControl, Navbar, Nav, NavItem, NavDropdown, MenuItem, Button, Form } from 'react-bootstrap';
 
 function Navb() {
   return (
     <Navbar bg="light" expand="lg">
-    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+    <Navbar.Brand href="#home">Mushroom-Kingdom</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#link">Link</Nav.Link>
+        <Nav.Link href=""><Link to="/">Home</Link></Nav.Link>
+        <Nav.Link href=""><Link to="/about">About</Link></Nav.Link>
+        <Nav.Link href=""><Link to="/contact">Contact</Link></Nav.Link>
         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
