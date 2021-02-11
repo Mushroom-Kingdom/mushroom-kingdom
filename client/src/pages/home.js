@@ -1,9 +1,19 @@
 import React from 'react'
+import homecss from './css/homecss.css'
 
 function Home() {
     return (
-        <div>
-            <h1>NEW THING</h1>
+        <div className="home">
+            <div id="header">
+                <h1>BIG THING</h1>
+            </div>
+            <div id="section">
+                <h1>Section</h1>
+                <br/>
+                <h1>Section</h1>
+                <br/>
+                <h1>Section</h1>
+            </div>
         </div>
     )
 }
