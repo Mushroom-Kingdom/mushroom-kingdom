@@ -1,11 +1,11 @@
 import React from 'react'
-import homecss from './css/home.css'
+import aboutcss from './css/about.css'
 
-function Home() {
+function About() {
     return (
-        <div className="home">
+        <div className="about">
             <div id="header">
-                <h1>BIG THING</h1>
+                <h1>OUR MISSION</h1>
             </div>
             <div id="section">
                 <h1>Section</h1>
@@ -18,5 +18,5 @@ function Home() {
     )
 }
 
-export default Home;
+export default About;
 
