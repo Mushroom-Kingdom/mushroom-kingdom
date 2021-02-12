@@ -1,0 +1,13 @@
+.Contact{
+    height:100%;
+}
+
+.Contact form{
+    position:absolute;
+    padding: 20px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    top: 100px;
+    left: 200px;
+}
