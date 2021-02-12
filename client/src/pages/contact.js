@@ -1,42 +1,32 @@
-import React from 'react'
-import contactcss from './css/contact.css'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Button, Form } from 'react-bootstrap';
+import React from 'react';
+import './css/contact.css';
+import { Button, Form } from 'react-bootstrap';
 
 function Contact() {
-    return (
-        <div className="Contact">
-            <Form>
-              <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="name@example.com" />
-              </Form.Group>
-              <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Label>Example select</Form.Label>
-                <Form.Control as="select">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </Form.Control>
-              </Form.Group>
-              <Form.Group controlId="exampleForm.ControlSelect2">
-                <Form.Label>Example multiple select</Form.Label>
-                <Form.Control as="select" multiple>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </Form.Control>
-              </Form.Group>
-              <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Example textarea</Form.Label>
-                <Form.Control as="textarea" rows={3} />
-              </Form.Group>
-            </Form>
-        </div>
-    )
+  function HandleSubmit(e){
+    e.preventDefault();
+    console.log("testing")
+  }
+
+  return (
+      <div className="Contact">
+          <Form onSubmit={HandleSubmit}>
+            <Form.Group controlId="Name">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="Name" placeholder="Eg. John" />
+            </Form.Group>
+            <Form.Group controlId="Email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="Email" placeholder="email@example.com" />
+            </Form.Group>
+            <Form.Group controlId="Message">
+              <Form.Label>Message:</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+            <Button variant="primary" type="submit">Submit</Button>
+          </Form>
+      </div>
+  )
 }
 
 export default Contact;
