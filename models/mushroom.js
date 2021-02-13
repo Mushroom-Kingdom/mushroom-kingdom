@@ -29,8 +29,8 @@ const mushroomSchema = new Schema({
       price: {
         type: Number,
       },
-      quantity_available: {
-        type: Number,
+      available: {
+        type: Boolean,
       },
       toxic: {
         type: Boolean,
