@@ -17,7 +17,7 @@ app.get("*", function(req, res) {
 });
 
 // Connect to database and then launch the webserver
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.tudpv.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false
 }).then(result => {
