@@ -33,6 +33,7 @@ app.get("*", function(req, res) {
 });
 
 // Connect to database and then launch the webserver
+
 mongoose.connect(process.env.MONGODB_URI || `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.tudpv.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useFindAndModify: false,

@@ -3,11 +3,12 @@
 }
 
 .Contact form{
-    position:absolute;
-    padding: 20px;
-    border-radius: 20px;
-    width: 350px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    top: 100px;
-    left: 200px;
+
+    width: 450px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 40px 55px 45px 55px;
+    border-radius: 15px;
+    transition: all .3s;
 }
