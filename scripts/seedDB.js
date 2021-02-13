@@ -20,8 +20,8 @@ const mushroomSeed = [
         genus: " ",         //genus of mushroom
         species: " ",       //species of mushroom
         price: " ",         //price of mushroom -> integer
-        quantity_available: " ",    //quantity of mushroom -> integer
-        toxic: " "                  //toxic of mushroom -> booleantrue / false
+        available: " ",    //quantity of -> boolean true / false
+        toxic: " "                  //toxic of mushroom -> boolean true / false
 
       }
     ]
