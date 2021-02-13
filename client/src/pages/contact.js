@@ -1,5 +1,5 @@
 import React from 'react'
-import contactcss from './css/contact.css'
+import contactss from './css/contact.css'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Button, Form } from 'react-bootstrap';
 
 function Contact() {
