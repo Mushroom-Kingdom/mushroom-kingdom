@@ -5,8 +5,9 @@ import "./App.css";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Contact from "./pages/contact";
-import Navb from "./components/Nav/index.js"
-import NoMatch from "./pages/NoMatch.js"
+import Navb from "./components/Nav/index.js";
+import NoMatch from "./pages/NoMatch.js";
+import Login from "./pages/login";
 
 class App extends Component {
   render() {
@@ -15,8 +16,9 @@ class App extends Component {
         <Navb/>
         <Switch>
         <Route exact path ="/" component={Home}/>
-        <Route exact path ="/about" component={About}/>
-        <Route exact path ="/contact" component={Contact}/>
+        <Route path ="/about" component={About}/>
+        <Route path ="/contact" component={Contact}/>
+        <Route path ="/login" component={Login}/>
         <Route component={NoMatch}/>
         </Switch>
       </Router>
