@@ -6,7 +6,7 @@ function Login (){
     //Authentication system requires here
 
     return(
-        <div className="login">
+        <div className="login general-form">
         <Form>
             <Form.Group controlId="Email">
               <Form.Label>Email</Form.Label>
@@ -28,9 +28,14 @@ function Login (){
                 />
             </Form.Group>
             <Button variant="primary" type="submit" block>Submit</Button>
-            <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
-            </p>
+            <div style={{overflow:"hidden"}}>
+                <p className="forgot-password text-left">
+                        Don't have an <a href="/signup"> account?</a>
+                </p>
+                <p className="forgot-password text-right">
+                        Forgot <a href="/forgot-password"> password?</a>
+                </p>
+            </div>
           </Form>
         </div>
     )
