@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import AuthenticationContext from "../contexts/AuthenticationContext";
+import API from "../utils/API";
 import './css/login.css';
 
 
@@ -20,7 +21,7 @@ function Login (){
 
       try {
 
-        let response = await API.login(userCredentials);
+        let response = await API.loginUser(userCredentials);
         if(response.status !== 201) {
             throw new Error(response.message);
         }
