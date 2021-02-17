@@ -2,9 +2,8 @@ const mongoose = require("mongoose");
 const express = require("express");
 const logger = require("morgan");
 const path = require("path");
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
 dotenv.config();
-
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -20,7 +19,7 @@ app.use(
 app.use(express.json());
 
 // Middleware to deal with CORS issues
-app.use((req, res, next) => {  
+app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Headers",
@@ -29,7 +28,7 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
 
   next();
-})
+});
 
 app.use(express.static("public"));
 // require("./routes/api/books")(app);
@@ -45,11 +44,11 @@ app.use("/auth", require("./routes/Authentication/authRoutes"));
 
 // HTTP ERROR HANDLING MIDDLEWARE
 app.use((error, req, res, next) => {
-  if(res.headerSent) {
+  if (res.headerSent) {
     return next(error);
   }
   res.status(error.code || 500);
-  res.json({message: error.message || "An unknown error has occurred!"});
+  res.json({ message: error.message || "An unknown error has occurred!" });
 });
 
 // Send every request to the React app
@@ -61,16 +60,12 @@ app.get("*", function (req, res) {
 // Connect to database and then launch the webserver
 
 mongoose
-  .connect(
-    process.env.MONGODB_URI ||
-      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.tudpv.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
-    {
-      useNewUrlParser: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-    }
-  )
+  .connect("mongodb://localhost/mushroomdb" || process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
   .then((result) => {
     console.log("Connected to database");
     app.listen(PORT, function () {

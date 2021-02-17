@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv").config();
 const db = require("../models");
 const dotenv = require("dotenv").config();
 
@@ -8,7 +9,7 @@ mongoose.connect(
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
-  useCreateIndex: true
+  useCreateIndex: true,
 });
 
 const mushroomSeed = [
