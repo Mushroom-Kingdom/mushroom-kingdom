@@ -1,2 +1,7 @@
 const router = require("express").Router();
-const bookRoutes = require("./books");
+const mushroomRoutes = require("./mushroom");
+
+// Book routes
+router.use("/mushroom", mushroomRoutes);
+
+module.exports = router;
