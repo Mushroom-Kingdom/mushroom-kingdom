@@ -1,34 +1,33 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books");
+  // Gets all mushrooms
+  getMushroom: function () {
+    return axios.get("/api/mushroom");
   },
-  // Gets the book with the given id
-  getBook: function(id) {
-    return axios.get("/api/books/" + id);
+  // Gets the mushroom with the given id
+  getMushroomId: function (id) {
+    return axios.get("/api/mushroom/" + id);
   },
-  // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+  // Deletes the mushroom with the given id
+  deleteMushroom: function (id) {
+    return axios.delete("/api/mushroom/" + id);
   },
-  // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
+  // Saves a mushroom to the database
+  saveMushroom: function (mushroomData) {
+    return axios.post("/api/mushroom", mushroomData);
   },
-
-  loginUser: function(userCredentials){
+  // LOGIN ROUTES
+  loginUser: function (userCredentials) {
     return axios.post("/auth/login", userCredentials);
   },
 
   // userData is an object with {firstName, lastName, email, password, passwordConfirm} fields
-  createUser: function(userData) {
+  createUser: function (userData) {
     return axios.post("/auth/signup", userData);
   },
 
-  loginAdmin: function(adminCredentials) {
+  loginAdmin: function (adminCredentials) {
     return axios.post("/auth/admin/login", adminCredentials);
-  }
-
+  },
 };
