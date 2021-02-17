@@ -1,5 +1,5 @@
-import React from 'react'
-import aboutcss from './css/about.css'
+import React from 'react';
+import './css/about.css';
 var image1 = require('./images/blueOyster.jpg');
 
 function About() {
