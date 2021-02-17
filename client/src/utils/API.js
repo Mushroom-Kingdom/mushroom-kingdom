@@ -22,6 +22,7 @@ export default {
     return axios.post("/auth/login", userCredentials);
   },
 
+  // userData is an object with {firstName, lastName, email, password, passwordConfirm} fields
   createUser: function(userData) {
     return axios.post("/auth/signup", userData);
   },
