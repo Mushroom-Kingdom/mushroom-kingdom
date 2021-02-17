@@ -1,7 +1,7 @@
 import React from "react";
 import "./productcard.css";
 import { Card, Button } from "react-bootstrap";
-var blue = require("../../pages/images/blueOyster.jpg");
+// var blue = require("../../pages/images/blueOyster.jpg");
 
 function ProductCard(props) {
   return (
@@ -9,7 +9,7 @@ function ProductCard(props) {
       <div className="container">
         <div className="row">
           <div className="col-md-3">
-            <img src={props.image_url} width="100%" />
+            <img src={props.image_url} width="100%" alt="" />
           </div>
           <div className="col-md-9">
             <Card className="text-center">
