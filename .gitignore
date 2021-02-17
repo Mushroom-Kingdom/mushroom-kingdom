@@ -105,3 +105,5 @@ dist
 .DS_Store
 
 .vscode 
+
+scripts/adminSeed.js
