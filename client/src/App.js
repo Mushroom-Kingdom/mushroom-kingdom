@@ -1,5 +1,10 @@
-import React, { useState, useCallback} from "react";
-import {BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import React, { useState, useCallback } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 // Import Contexts
 import AuthenticationContext from "./contexts/AuthenticationContext";
@@ -8,23 +13,22 @@ import AuthenticationContext from "./contexts/AuthenticationContext";
 import Navbar from "./components/Nav/Navbar";
 
 // Import Page Views
-import Home from "./pages/Home";
-import About from "./pages/About";
+import Home from "./pages/home";
+import About from "./pages/about";
 import Shop from "./pages/Shop";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+import Signup from "./pages/signup";
+import Login from "./pages/login";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminProducts from "./pages/AdminProducts";
 import Members from "./pages/Members";
 import NoMatch from "./pages/NoMatch";
 
-
-const App = props => {  
+const App = (props) => {
   const [isAdmin, setIsAdmin] = useState(false);
-  const [token, setToken] = useState(null);  
-  const[userID, setUserID] = useState(null);
-  
+  const [token, setToken] = useState(null);
+  const [userID, setUserID] = useState(null);
+
   const login = useCallback((userID, isAdmin, token) => {
     setIsAdmin(isAdmin);
     setUserID(userID);
@@ -38,12 +42,12 @@ const App = props => {
   }, []);
 
   let routes;
-  if(!token){
+  if (!token) {
     routes = (
       <Switch>
         <Route path="/" exact>
           <Home />
-        </Route>        
+        </Route>
         <Route path="/about">
           <About />
         </Route>
@@ -64,7 +68,7 @@ const App = props => {
     );
   }
 
-  if(token && !isAdmin){
+  if (token && !isAdmin) {
     routes = (
       <Switch>
         <Route path="/" exact>
@@ -84,7 +88,7 @@ const App = props => {
     );
   }
 
-  if(token && isAdmin){
+  if (token && isAdmin) {
     routes = (
       <Switch>
         <Route path="/admin/dashboard">
@@ -98,15 +102,23 @@ const App = props => {
     );
   }
 
-  
   return (
-    <AuthenticationContext.Provider value={{userID: userID, isAdmin: isAdmin, isAuthenticated: !!token, token: token, login: login, logout: logout}}>
+    <AuthenticationContext.Provider
+      value={{
+        userID: userID,
+        isAdmin: isAdmin,
+        isAuthenticated: !!token,
+        token: token,
+        login: login,
+        logout: logout,
+      }}
+    >
       <Router>
         <Navbar />
         {routes}
       </Router>
     </AuthenticationContext.Provider>
-  )
+  );
 };
 
 export default App;
