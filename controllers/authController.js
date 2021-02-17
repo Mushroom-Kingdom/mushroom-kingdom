@@ -24,17 +24,13 @@ const signup = async (req, res, next) => {
         if(existingUser){
             throw new HttpError("User account with this email already exists", 422);
         }
-    }catch (err) {
-        console.log(err);
-    }
 
-    // If there is no existing user with that email, check that the passwords match
-    if(password !== passwordConfirm){
-        throw new HttpError("Passwords do not match", 422);
-    }
+        // If there is no existing user with that email, check that the passwords match
+        if(password !== passwordConfirm){
+            throw new HttpError("Passwords do not match", 422);
+        }
 
-    // If the passwords match, hash the password, then create a new user account
-    try {
+        // If the passwords match, hash the password, then create a new user account
         let hashedPassword = await bcrypt.hash(password, 12);
         const user =  new User({
             firstName: firstName,
@@ -50,11 +46,12 @@ const signup = async (req, res, next) => {
         token = jwt.sign({userID: user._id, email: user.email, isAdmin: user.isAdmin}, process.env.JWT_SECRET, {expiresIn: "1h"});
 
         res.status(201).send({token: token, userID: user._id, isAdmin: user.isAdmin, email: user.email});
-        
-    } catch (err) {       
+
+    }catch (err) {
+        console.log(err);
         let error = new HttpError("User creation failed", 500);
         return next(error);
-    }   
+    }     
     
 };
 
