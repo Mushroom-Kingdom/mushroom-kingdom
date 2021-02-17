@@ -10,7 +10,7 @@ function Login (){
     const [password, setPassword] = useState("");
     const auth = useContext(AuthenticationContext);
 
-    async function login(event) {
+    async function loginSubmitHandler(event) {
       event.preventDefault();
 
       const userCredentials = {
@@ -20,7 +20,12 @@ function Login (){
 
       try {
 
-        auth.login(userCredentials);
+        let response = await API.login(userCredentials);
+        if(response.status !== 201) {
+            throw new Error(response.message);
+        }
+
+        auth.login(response.data.userID, response.data.isAdmin, response.data.token);
 
       }catch(err){
         
@@ -31,7 +36,7 @@ function Login (){
     return(
         <div className="login general-form">
           <h1 className="text-center mb-4">Log In</h1>
-        <Form onSubmit={login}>
+        <Form onSubmit={loginSubmitHandler}>
             <Form.Group controlId="Email">
               <Form.Label>Email</Form.Label>
               <Form.Control 
