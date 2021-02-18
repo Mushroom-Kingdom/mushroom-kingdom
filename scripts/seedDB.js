@@ -3,7 +3,7 @@ const dotenv = require("dotenv").config();
 const db = require("../models");
 
 // need to update localhost address
-mongoose.connect("mongodb://localhost/mushroomdb" || process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
@@ -37,7 +37,7 @@ const mushroomSeed = [
   },
 ];
 
-db.Mushroom.deleteMany({})
+db.Mushroom.remove({})
   .then(() => db.Mushroom.collection.insertMany(mushroomSeed))
   .then((data) => {
     console.log(data);
