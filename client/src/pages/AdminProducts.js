@@ -1,11 +1,11 @@
 import React from "react";
 
-function AdminProducts() {    
+function AdminProducts() { 
 
-    return (            
+    return (   
         <section>
-            <p>This is the admin products</p> 
-        </section>            
+            <p>This is the admin products</p>
+        </section>                  
     )
 }
 

@@ -60,18 +60,24 @@ app.get("*", function (req, res) {
 // Connect to database and then launch the webserver
 
 mongoose
-  .connect("mongodb://localhost/mushroomdb" || process.env.MONGODB_URI, {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/mushroomdb", {
+
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then((result) => {
-    console.log("Connected to database");
-    app.listen(PORT, function () {
-      console.log(`🌎 ==> Server is now running on port ${PORT}!`);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
+  app.listen(PORT, function () {
+    console.log(`🌎 ==> Server is now running on port ${PORT}!`);
   });
+
+
+  // .then((result) => {
+  //   console.log("Connected to database");
+  //   app.listen(PORT, function () {
+  //     console.log(`🌎 ==> Server is now running on port ${PORT}!`);
+  //   });
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  // });

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useContext } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,25 +24,28 @@ import AdminProducts from "./pages/AdminProducts";
 import Members from "./pages/Members";
 import NoMatch from "./pages/NoMatch";
 
-const App = (props) => {
+const App = () => {
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState(null);
-  const [userID, setUserID] = useState(null);
+  const [userID, setUserID] = useState(null); 
 
   const login = useCallback((userID, isAdmin, token) => {
     setIsAdmin(isAdmin);
     setUserID(userID);
     setToken(token);
+    setIsAuthenticated(true);
   }, []);
 
   const logout = useCallback(() => {
     setUserID(null);
     setIsAdmin(false);
     setToken(null);
+    setIsAuthenticated(false);
   }, []);
 
   let routes;
-  if (!token) {
+  if (!isAuthenticated) {
     routes = (
       <Switch>
         <Route path="/" exact>
@@ -68,7 +71,7 @@ const App = (props) => {
     );
   }
 
-  if (token && !isAdmin) {
+  if (isAuthenticated && !isAdmin) {
     routes = (
       <Switch>
         <Route path="/" exact>
@@ -88,7 +91,7 @@ const App = (props) => {
     );
   }
 
-  if (token && isAdmin) {
+  if (isAuthenticated && isAdmin) {
     routes = (
       <Switch>
         <Route path="/admin/dashboard">
@@ -107,7 +110,7 @@ const App = (props) => {
       value={{
         userID: userID,
         isAdmin: isAdmin,
-        isAuthenticated: !!token,
+        isAuthenticated: isAuthenticated,
         token: token,
         login: login,
         logout: logout,
