@@ -31,6 +31,10 @@ export default {
 
   loginAdmin: function(adminCredentials) {
     return axios.post("/auth/admin/login", adminCredentials);
+  },
+
+  passwordReset: function(email) {
+    return axios.post("/auth/resetpassword", email);
   }
 
 };
