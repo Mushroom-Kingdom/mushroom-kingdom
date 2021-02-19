@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
   // Gets all mushrooms
-  getMushroom: function () {
-    return axios.get("/api/mushroom");
+  getMushrooms: function () {
+    return axios.get("/api/mushrooms/");
   },
   // Gets the mushroom with the given id
   getMushroomId: function (id) {
@@ -17,7 +17,8 @@ export default {
   saveMushroom: function (mushroomData) {
     return axios.post("/api/mushroom", mushroomData);
   },
-  // LOGIN ROUTES
+
+  // AUTHENTICATION FUNCTIONS
   loginUser: function (userCredentials) {
     return axios.post("/auth/login", userCredentials);
   },

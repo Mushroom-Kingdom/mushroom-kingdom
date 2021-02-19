@@ -1,35 +1,33 @@
 import React from "react";
 import "./productcard.css";
-import { Card, Button } from "react-bootstrap";
-// var blue = require("../../pages/images/blueOyster.jpg");
+import { Button } from "react-bootstrap";
+var blue = require("../../pages/images/blueOyster.jpg");
 
 function ProductCard(props) {
   return (
-    <div>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-3">
-            <img src={props.image_url} width="100%" alt="" />
-          </div>
-          <div className="col-md-9">
-            <Card className="text-center">
-              <Card.Header>{props.name}</Card.Header>
-              <Card.Body>
-                <Card.Title></Card.Title>
-                <Card.Text>{props.description}</Card.Text>
-                {/* <Button variant="primary">Go somewhere</Button> */}
-              </Card.Body>
-              <Card.Footer className="text-muted">
-                <div className="row">
-                  <div className="col-md-3">
-                    Toxic | {props.toxic ? "Yes" : "No"}
-                  </div>
-                  <div className="col-md-3">Family | {props.family}</div>
-                  <div className="col-md-3">Genus | {props.genus}</div>
-                  <div className="col-md-3">Species | {props.species}</div>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-3">
+          <img src={blue} width="100%" />
+        </div>
+        <div className="col-md-9">
+          <div className="card text-center">
+            <div className="card-header">{props.name}</div>
+            <div className="card-body">
+              <div className="card-title"></div>
+              <p className="card-text">{props.description}</p>
+              {/* <Button variant="primary">Go somewhere</Button> */}
+            </div>
+            <div className="card-footer text-muted">
+              <div className="row">
+                <div className="col-md-3">
+                  Toxic | {props.toxic ? "YES" : "NO"}
                 </div>
-              </Card.Footer>
-            </Card>
+                <div className="col-md-3">Family | {props.family}</div>
+                <div className="col-md-3">Genus | {props.genus}</div>
+                <div className="col-md-3">Species | {props.species}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
