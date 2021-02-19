@@ -14,7 +14,7 @@ import Navbar from "./components/Nav/Navbar";
 
 // Import Page Views
 import Home from "./pages/home";
-import About from "./pages/about";
+import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Signup from "./pages/signup";
 import Login from "./pages/login";
