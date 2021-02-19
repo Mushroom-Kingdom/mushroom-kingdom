@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from 'react-modal';
 import FullList from './FullList.js'
 
-function AdminProducts() {    
+function AdminProducts() { 
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 

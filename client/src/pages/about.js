@@ -51,7 +51,7 @@ function About() {
                 <h1>OUR MISSION</h1>
                 <div class="row">
                     <div class="col-md-4">
-                        <img src={image1} width="400" height="400" ></img>
+                        <img src={image1} width="400" height="400" alt="" ></img>
                     </div>
                     <div class="col-md-6" class="mission">
                         <p>Our mission at the Mushroom Kingdom is simple: to provide high quality mushrooms for an affordable price. </p>
