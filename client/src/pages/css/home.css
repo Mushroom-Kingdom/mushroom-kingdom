@@ -1,0 +1,21 @@
+html, body {
+    height: 100%;
+}
+
+.home {
+    height: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.home #header{
+    margin: 0 auto;
+    text-align: center;
+    padding: 90px;
+    margin-bottom: 150px;
+}
+
+.home #section {
+    margin: 0 auto;
+    text-align: center;
+}

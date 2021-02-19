@@ -16,5 +16,19 @@ export default {
   // Saves a book to the database
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
+  },
+
+  loginUser: function(userCredentials){
+    return axios.post("/auth/login", userCredentials);
+  },
+
+  // userData is an object with {firstName, lastName, email, password, passwordConfirm} fields
+  createUser: function(userData) {
+    return axios.post("/auth/signup", userData);
+  },
+
+  loginAdmin: function(adminCredentials) {
+    return axios.post("/auth/admin/login", adminCredentials);
   }
+
 };
