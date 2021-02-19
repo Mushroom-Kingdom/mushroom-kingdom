@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import AuthenticationContext from "../contexts/AuthenticationContext";
 import './css/home.css';
 
 function Home() {
+    const auth = useContext(AuthenticationContext);
+
     return (
         <div className="home">
             <div id="header">
@@ -9,10 +12,10 @@ function Home() {
                 <br />
                 <h1>THE MUSHROOM FARM SHOULD BE FULLY FUNCTIONING BEFORE THE END OF THE WEEK!</h1>
                 <div>
-                    <a href="/signup">Become a member</a>
+                   {!auth.isAuthenticated && <a href="/signup">Become a member</a> } 
                 </div>
                 <div>
-                    <a href="/login">Login</a>
+                   {!auth.isAuthenticated && <a href="/login">Login</a>} 
                 </div>               
             </div>
             <div id="section">
