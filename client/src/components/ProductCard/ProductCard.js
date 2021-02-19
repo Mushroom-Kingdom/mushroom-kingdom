@@ -3,6 +3,22 @@ import './productcard.css'
 import { Card, Button } from 'react-bootstrap';
 var blue = require('../../pages/images/blueOyster.jpg');
 
+var array = {
+    
+        name: "Blue Oyster", //name of mushroom
+        image_url: "placeholderURL.com", //image of mushroom
+        description:
+          "Blue Oyster mushrooms are part of the Pleurotaceae family along with their siblings, the Gold and Pink Oyster mushrooms! They are very healthy, containing high amounts of niacin, riboflavin and pantothenic acid. On top of this, they are nearly fat free and high in protein. These mushrooms, being the superfood that they are, are very fortunately highly dynamic with regard to their uses in the kitchen.", //description of mushroom
+        family: "Pleurotaceae", //family of mushroom
+        genus: "Pleurotus", //genus of mushroom
+        species: "Columbinus", //species of mushroom
+        price: 10, //price of mushroom -> integer
+        available: true, //quantity of -> boolean true / false
+        toxic: false, //toxic of mushroom -> boolean true / false
+      
+}
+
+
 function ProductCard() {
     return (
         <div>

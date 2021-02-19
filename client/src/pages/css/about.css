@@ -2,6 +2,13 @@ html, body, #root {
     height: 100%;
 }
 
+#desc {
+    height: 150px;
+    width: 400px;
+    padding-top: 0;
+    padding-left: 0;
+}
+
 .about {
     height: 100%;
     
