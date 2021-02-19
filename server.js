@@ -67,10 +67,13 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
+  .catch((err) => {
+      console.log(err);
+    });
   app.listen(PORT, function () {
     console.log(`🌎 ==> Server is now running on port ${PORT}!`);
   });
-
+ 
 
   // .then((result) => {
   //   console.log("Connected to database");
