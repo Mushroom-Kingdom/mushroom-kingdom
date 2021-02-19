@@ -60,7 +60,8 @@ app.get("*", function (req, res) {
 // Connect to database and then launch the webserver
 
 mongoose
-  .connect( process.env.MONGODB_URI || "mongodb://localhost/mushroomdb", {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/mushroomdb", {
+
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
