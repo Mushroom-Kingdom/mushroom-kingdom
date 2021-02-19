@@ -1,10 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from 'react-modal';
 import './css/about.css';
+import FullList from './FullList.js';
+// import EditModal from '../components/Modal/EditModal.js';
+// import { Button } from 'react-bootstrap';
 var image1 = require('./images/blueOyster.jpg');
 
+
 function About() {
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+
+
     return (
+        
         <div className="about">
+            <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
+
+            <Modal isOpen={modalIsOpen}>
+                <h3>Name of mushroom to go here</h3>
+                <br/>
+                <br/>
+                <input placeholder="Name"></input>
+                <br/>
+                <br/>
+                <textArea id="desc" placeholder="Description"></textArea>
+                <br/>
+                <br/>
+                <input placeholder="Toxicity"></input>
+                <br/>
+                <br/>
+                <input placeholder="Family"></input>
+                <br/>
+                <br/>
+                <input placeholder="Genus"></input>
+                <br/>
+                <br/>
+                <input placeholder="Species"></input>
+                <br/>
+                <br/>
+                <button onClick={() => setModalIsOpen(false)}>Close Modal</button>
+                <button onClick={() => setModalIsOpen(false)}>Save Changes</button>
+                <br/>
+                <br/>
+                <FullList />
+                
+            </Modal>
             <div id="header">
                 <h1>OUR MISSION</h1>
                 <div class="row">
@@ -19,7 +61,7 @@ function About() {
             <div id="section">
                 <h1>History</h1>
                 <p>
-                    The Mushroom Kingdom has modest beginnings with two friends from high school, Nick Pasch and Bryce Van Note, searching for their calling in a pandemic-stricken world. Nick had just dropped out of college and Bryce had just graduated high school, and the two were eager to start working. What ensued was a period of informal research and experimentation with many different avenues of interest, one of which being mushrooms. After growing as hobbyists for some months and acquiring vast knowledge and experience growing mushrooms, we decided to begin this mushroom farm. Now we face the challenge of producing the highest quality fungus for affordable rates, an obstacle we hope to overcome with evermore success. 
+                    The Mushroom Kingdom has modest beginnings with two friends from high school, Nick Pasch and Bryce Van Note, searching for their calling in a pandemic-stricken world. Nick had just dropped out of college and Bryce had just graduated high school, and the two were eager to begin working. What ensued was a period of informal research and experimentation with many different avenues of interest, one of which being mushrooms. After growing as hobbyists for some months and acquiring vast knowledge and experience growing mushrooms, we decided to begin this mushroom farm. Now we face the challenge of producing the highest quality fungus for affordable rates, an obstacle we hope to overcome with evermore success. 
                 </p>
                 <br/>
                 <h1>How We Grow</h1>
@@ -33,6 +75,7 @@ function About() {
                 </p>
             </div>
         </div>
+    
     )
 }
 
