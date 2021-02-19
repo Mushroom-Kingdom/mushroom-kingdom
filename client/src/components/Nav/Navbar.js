@@ -17,7 +17,7 @@ function Navb() {
         {!auth.isAdmin && auth.isAuthenticated && (<Nav.Link href="/members">User Dashboard</Nav.Link>)}
         {auth.isAdmin && auth.isAuthenticated && (<Nav.Link href="/admin">Admin Dashboard</Nav.Link>)}
         {auth.isAdmin && auth.isAuthenticated && (<Nav.Link href="/admin/products">Products</Nav.Link>)}   
-       
+        
       </Nav>
       <Form inline>
         {auth.isAuthenticated && (
