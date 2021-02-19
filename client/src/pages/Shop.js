@@ -27,6 +27,7 @@ function Shop() {
               species={mushroom.species}
               toxic={mushroom.toxic}
             ></ProductCard>
+
           );
         })}
       </div>
