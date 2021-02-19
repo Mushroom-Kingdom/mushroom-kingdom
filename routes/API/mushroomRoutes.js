@@ -14,4 +14,11 @@ router
   .put(mushroomController.update)
   .delete(mushroomController.remove);
 
+// Matches with "/api/mushroom/:id"
+router
+  .route("/:id")
+  .get(mushroomController.findById)
+  .put(mushroomController.update)
+  .delete(mushroomController.remove);
+
 module.exports = router;
