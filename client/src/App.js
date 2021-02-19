@@ -23,6 +23,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminProducts from "./pages/AdminProducts";
 import Members from "./pages/Members";
 import NoMatch from "./pages/NoMatch";
+import Order from "./pages/Order";
 
 const App = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -85,6 +86,9 @@ const App = () => {
         </Route>
         <Route path="/shop">
           <Shop />
+        </Route>
+        <Route path="/order">
+          <Order />
         </Route>
         <Redirect to="/members" />
       </Switch>
