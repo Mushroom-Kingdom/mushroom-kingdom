@@ -1,6 +1,6 @@
 import React from "react";
 
-function AdminDashboard() {    
+function AdminProducts() {    
 
     return (            
         <section>
@@ -9,4 +9,4 @@ function AdminDashboard() {
     )
 }
 
-export default AdminDashboard;
+export default AdminProducts;
