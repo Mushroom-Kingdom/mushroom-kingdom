@@ -15,6 +15,7 @@ function Navb() {
         {!auth.isAdmin && (<Link to={"/"} className="nav-link">Home</Link>)} 
         {!auth.isAdmin && (<Link to={"/about"} className="nav-link">About</Link>)}
         {!auth.isAdmin && (<Link to={"/shop"} className="nav-link">Shop</Link>)}
+        {!auth.isAdmin && auth.isAuthenticated && (<Link to={"/order"} className="nav-link">Order</Link>)}
         {!auth.isAdmin && auth.isAuthenticated && (<Link to={"/members"} className="nav-link">User Dashboard</Link>)}
         {auth.isAdmin && auth.isAuthenticated && (<Link to={"/admin"} className="nav-link">Admin Dashboard</Link>)}
         {auth.isAdmin && auth.isAuthenticated && (<Link to={"/admin/products"} className="nav-link">Products</Link>)}   
