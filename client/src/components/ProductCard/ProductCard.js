@@ -1,9 +1,25 @@
-import React from "react";
+import React, {useContext} from "react";
+import AuthenticationContext from "../../contexts/AuthenticationContext";
+import MushroomContext from "../../contexts/MushroomContext";
+import API from "../../utils/API";
 import "./productcard.css";
-import { Button } from "react-bootstrap";
+
 var blue = require("../../pages/images/blueOyster.jpg");
 
 function ProductCard(props) {
+
+  const auth = useContext(AuthenticationContext);
+  const mushroom = useContext(MushroomContext);
+
+  function handleDelete() {
+    const mushroomID = props.id;
+    console.log(mushroomID);
+    API.deleteMushroom(mushroomID).then(res => {
+      mushroom.getMushrooms();
+    });
+  }
+  
+
   return (
     <div className="container">
       <div className="row">
@@ -12,11 +28,10 @@ function ProductCard(props) {
         </div>
         <div className="col-md-9">
           <div className="card text-center">
-            <div className="card-header">{props.name}</div>
+            <div className="card-header">{props.name}{auth.isAdmin && (<button onClick={handleDelete} className="btn btn-danger float-right"><i className="fas fa-trash-alt"></i></button>)}{auth.isAdmin && (<button className="btn btn-info float-right"><i className="fas fa-edit"></i></button>)}</div>
             <div className="card-body">
               <div className="card-title"></div>
               <p className="card-text">{props.description}</p>
-              {/* <Button variant="primary">Go somewhere</Button> */}
             </div>
             <div className="card-footer text-muted">
               <div className="row">

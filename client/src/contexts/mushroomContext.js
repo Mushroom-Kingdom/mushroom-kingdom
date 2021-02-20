@@ -1,7 +1,8 @@
 import { createContext } from "react";
 
 const mushroomContext = createContext({
-    mushrooms: []
+    mushrooms: [],
+    getMushrooms: () => {}
 });
 
 export default mushroomContext;
