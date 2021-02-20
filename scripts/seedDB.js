@@ -55,7 +55,7 @@ const mushroomSeed = [
   }
 ];
 
-db.Mushroom.deleteMany({})
+db.Mushroom.remove({})
   .then(() => db.Mushroom.collection.insertMany(mushroomSeed))
   .then((data) => {
     console.log(data);

@@ -4,7 +4,6 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const HttpError = require("../models/http-error");
-const user = require("../models/user");
 
 const signup = async (req, res, next) => {
     // Check the results of request validation middleware
@@ -118,8 +117,43 @@ const adminLogin = async (req, res, next) => {
     
 }
 
+const passwordReset = async (req, res, next) => {
+    // Check the results of request validation middleware
+    const errors = validationResult(req);
+
+    if(!errors.isEmpty()){
+        console.log(errors);
+        throw new HttpError("Invalid input, please try again.", 422);
+    }
+
+    // Extract user information from the request body
+    const email = req.body.email;
+    
+    
+    try {
+
+        // Check for existing user with that email in the database
+        let existingUser = await User.findOne({email});
+
+        // Throw an error if no account exists
+        if(!existingUser){
+            throw new HttpError("Account not found.", 404);
+        }
+
+        let token;
+        token = jwt.sign({userID: existingUser._id, email: existingUser.email, isAdmin: existingUser.isAdmin}, process.env.JWT_SECRET, {expiresIn: "10m"});
+        res.status(201).json({userID: existingUser._id, email: existingUser.email, isAdmin: existingUser.isAdmin, token: token});
+
+    } catch (err) {
+
+        console.log(err);
+    }
+    
+};
+
 module.exports = {
     signup,
     login,
-    adminLogin
+    adminLogin,
+    passwordReset
 };
