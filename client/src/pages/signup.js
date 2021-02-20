@@ -4,7 +4,6 @@ import {Button, Form } from "react-bootstrap";
 import AuthenticationContext from "../contexts/AuthenticationContext";
 
 function Signup(){
-    const [loading, setLoading] = useState(false);
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -92,7 +91,7 @@ function Signup(){
                         required={true} 
                     />
                 </Form.Group>
-                <Button disabled={loading} variant="primary" type="submit" block>Register</Button>
+                <Button variant="primary" type="submit" block>Register</Button>
                 <p className="forgot-password text-right">
                     Already registered? <a href="/login">Log in</a>
                 </p>

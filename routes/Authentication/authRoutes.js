@@ -22,6 +22,14 @@ router.post(
 // User Login
 router.post("/login", auth.login);
 
+router.post(
+    "/resetpassword",
+    [
+        check("email").normalizeEmail(),
+        check("email").isEmail()
+    ],
+    auth.passwordReset);
+
 
 
 module.exports = router;

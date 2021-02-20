@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import AuthenticationContext from "../../contexts/AuthenticationContext";
 import { Navbar, Nav, Button, Form } from 'react-bootstrap';
 
@@ -11,12 +12,12 @@ function Navb() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
-        {!auth.isAdmin && (<Nav.Link href="/">Home</Nav.Link>)} 
-        {!auth.isAdmin && (<Nav.Link href="/about">About</Nav.Link>)}
-        {!auth.isAdmin && (<Nav.Link href="/shop">Shop</Nav.Link>)}
-        {!auth.isAdmin && auth.isAuthenticated && (<Nav.Link href="/members">User Dashboard</Nav.Link>)}
-        {auth.isAdmin && auth.isAuthenticated && (<Nav.Link href="/admin">Admin Dashboard</Nav.Link>)}
-        {auth.isAdmin && auth.isAuthenticated && (<Nav.Link href="/admin/products">Products</Nav.Link>)}   
+        {!auth.isAdmin && (<Link to={"/"} className="nav-link">Home</Link>)} 
+        {!auth.isAdmin && (<Link to={"/about"} className="nav-link">About</Link>)}
+        {!auth.isAdmin && (<Link to={"/shop"} className="nav-link">Shop</Link>)}
+        {!auth.isAdmin && auth.isAuthenticated && (<Link to={"/members"} className="nav-link">User Dashboard</Link>)}
+        {auth.isAdmin && auth.isAuthenticated && (<Link to={"/admin"} className="nav-link">Admin Dashboard</Link>)}
+        {auth.isAdmin && auth.isAuthenticated && (<Link to={"/admin/products"} className="nav-link">Products</Link>)}   
         
       </Nav>
       <Form inline>
