@@ -6,10 +6,16 @@ import {
   Redirect,
 } from "react-router-dom";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import css from "../src/App.css";
 =======
 import API from "./utils/API";
 >>>>>>> develop
+=======
+import css from "../src/App.css";
+import API from "./utils/API";
+
+>>>>>>> 26042649525d6c3065e9a85da50134649aab23b5
 
 // Import Contexts
 import AuthenticationContext from "./contexts/AuthenticationContext";
@@ -38,11 +44,17 @@ const App = () => {
   const [token, setToken] = useState(null);
   const [userID, setUserID] = useState(null);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
   // Mushroom State Variables
   const [mushrooms, setMushrooms] = useState([]);
 >>>>>>> develop
+=======
+
+  // Mushroom State Variables
+  const [mushrooms, setMushrooms] = useState([]);
+>>>>>>> 26042649525d6c3065e9a85da50134649aab23b5
 
   // Mushroom Functions for use with MushroomContext
   function getMushrooms(){
@@ -138,6 +150,7 @@ const App = () => {
         logout: logout,
       }}
     >
+<<<<<<< HEAD
 
       <div className="backgroundStyle">
         <MushroomContext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
@@ -146,6 +159,16 @@ const App = () => {
             {routes}
         </Router>
         </MushroomContext.Provider>
+=======
+    
+      <div className="backgroundStyle">
+       <MushroomContext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
+      <Router>
+        <Navbar />
+        {routes}
+      </Router>
+      </MushroomContext.Provider>
+>>>>>>> 26042649525d6c3065e9a85da50134649aab23b5
       </div>
 
     </AuthenticationContext.Provider>
