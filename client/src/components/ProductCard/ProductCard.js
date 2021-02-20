@@ -52,12 +52,7 @@ function ProductCard(props) {
       mushroom.getMushrooms();
     });
   }
-  // name: mushroomName,
-  // image_url: mushroomImage,
-  // description: mushroomDescription,
-  // family: mushroomFamily,
-  // genus: mushroomGenus,
-  // species: mushroomSpecies,
+
   return (
     <div className="container">
       <Modal isOpen={modalIsOpen}>          
