@@ -75,9 +75,6 @@ const App = () => {
         <Route path="/admin">
           <AdminLogin />
         </Route>
-        <Route path="/order">
-          <Order />
-        </Route>
         <Redirect to="/" />
       </Switch>
     );
@@ -98,7 +95,9 @@ const App = () => {
         <Route path="/shop">
           <Shop />
         </Route>
-
+        <Route path="/order">
+          <Order />
+        </Route>
         <Redirect to="/members" />
       </Switch>
     );
