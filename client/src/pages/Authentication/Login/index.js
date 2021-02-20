@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import AuthenticationContext from "../contexts/AuthenticationContext";
-import API from "../utils/API";
-import './css/login.css';
+import AuthenticationContext from "../../../contexts/AuthenticationContext";
+import API from "../../../utils/API";
+import './login.css';
 
 
 function Login (){

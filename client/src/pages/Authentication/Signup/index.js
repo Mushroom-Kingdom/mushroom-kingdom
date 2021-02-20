@@ -1,7 +1,7 @@
-import API from "../utils/API";
+import API from "../../../utils/API";
 import React, { useState, useContext } from "react";
 import {Button, Form } from "react-bootstrap";
-import AuthenticationContext from "../contexts/AuthenticationContext";
+import AuthenticationContext from "../../../contexts/AuthenticationContext";
 
 function Signup(){
     const [firstName, setFirstName] = useState("");
