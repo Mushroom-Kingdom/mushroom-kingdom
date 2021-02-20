@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import AuthenticationContext from "../../contexts/AuthenticationContext";
-import MushroomContext from "../../contexts/MushroomContext";
+import MushroomContext from "../../contexts/mushroomcontext";
 import API from "../../utils/API";
 import "./productcard.css";
 
@@ -15,6 +15,23 @@ function ProductCard(props) {
     const mushroomID = props.id;
     console.log(mushroomID);
     API.deleteMushroom(mushroomID).then(res => {
+      mushroom.getMushrooms();
+    });
+  }
+
+  function handleEditButton() {
+    const mushroomID = props.id;
+    console.log(mushroomID);
+    API.getMushrooms(mushroomID).then(res => {
+      
+    })
+  }
+
+  function handleEditSave() {
+    const mushroomID = props.id;
+    console.log(mushroomID);
+
+    API.editMushroom(mushroomID).then(res => {
       mushroom.getMushrooms();
     });
   }

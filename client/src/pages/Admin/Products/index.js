@@ -1,7 +1,7 @@
 import React, { useState, useEffect,useContext } from "react";
 import Modal from 'react-modal';
 import ProductCard from "../../../components/ProductCard/ProductCard";
-import mushroomContext from "../../../contexts/MushroomContext";
+import mushroomContext from "../../../contexts/mushroomcontext";
 import API from "../../../utils/API"; //just add
 
 var image1 = require("../../images/blueOyster.jpg");

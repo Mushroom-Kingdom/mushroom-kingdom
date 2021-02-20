@@ -9,7 +9,7 @@ import API from "./utils/API";
 
 // Import Contexts
 import AuthenticationContext from "./contexts/AuthenticationContext";
-import MushroomContext from "./contexts/MushroomContext";
+import mushroomcontext from "./contexts/mushroomcontext";
 
 
 // Import Components
@@ -132,12 +132,12 @@ const App = () => {
         logout: logout
       }}
     >
-    <MushroomContext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
+    <mushroomcontext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
       <Router>
         <Navbar />
         {routes}
       </Router>
-      </MushroomContext.Provider>
+      </mushroomcontext.Provider>
     </AuthenticationContext.Provider>
   );
 };

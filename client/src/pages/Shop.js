@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import ProductCard from "../components/ProductCard/ProductCard";
 import "./css/shop.css";
 import API from "../utils/API";
-import mushroomContext from "../contexts/mushroomContext";
+import mushroomContext from "../contexts/mushroomcontext";
 
 function Shop() {
   const [mushrooms, setMushrooms] = useState([]);
@@ -15,7 +15,7 @@ function Shop() {
 
   return (
     <div className="shop">
-      <div className="container">
+      <div className="container theList">
         {mushrooms.map((mushroom) => {
           return (
             <ProductCard
