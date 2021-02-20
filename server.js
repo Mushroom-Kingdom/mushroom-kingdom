@@ -30,19 +30,19 @@ app.use(express.json());
 //   next();
 // });
 
-app.use(express.static("public"));
-
+// app.use(express.static("public"));
+// require("./routes/api/books")(app);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/public"));
+  app.use(express.static("client/build"));
 }
 
 // API Routes
 app.use("/api/mushrooms", require("./routes/API/mushroomRoutes"));
 app.use("/auth", require("./routes/Authentication/authRoutes"));
 
-// // HTTP ERROR HANDLING MIDDLEWARE
+// HTTP ERROR HANDLING MIDDLEWARE
 // app.use((error, req, res, next) => {
 //   if (res.headerSent) {
 //     return next(error);
@@ -54,7 +54,7 @@ app.use("/auth", require("./routes/Authentication/authRoutes"));
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 // Connect to database and then launch the webserver
