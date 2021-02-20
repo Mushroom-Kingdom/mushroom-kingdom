@@ -1,14 +1,16 @@
 import React, { useState, useEffect,useContext } from "react";
 import Modal from 'react-modal';
 import ProductCard from "../../../components/ProductCard/ProductCard";
-import mushroomContext from "../../../contexts/MushroomContext";
+import MushroomContext from "../../../contexts/MushroomContext";
 import API from "../../../utils/API"; //just add
+
 
 var image1 = require("../../images/blueOyster.jpg");
 
-function AdminProducts() {  
+function AdminProducts(props) {  
     // Modal State variables
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const mushroom = useContext(MushroomContext);
 
     // Mushroom State variables
     const [mushroomName, setMushroomName] = useState("");
@@ -20,7 +22,7 @@ function AdminProducts() {
     const [mushroomIsToxic, setMushroomIsToxic] = useState(false);  
     
     // Context variables
-    const context = useContext(mushroomContext);   
+    const context = useContext(MushroomContext);   
 
     useEffect(() => {
         context.getMushrooms();
@@ -40,7 +42,9 @@ function AdminProducts() {
             context.getMushrooms();
             setModalIsOpen(false);                      
           }).catch(err => console.log(err));
-    }   
+    }
+    
+    
 
     return (            
           <>

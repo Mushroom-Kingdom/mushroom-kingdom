@@ -13,6 +13,9 @@ export default {
   deleteMushroom: function (id) {
     return axios.delete("/api/mushrooms/" + id);
   },
+  editMushroom: function (id) {
+    return axios.put("/api/mushrooms/" + id);
+  },
   // Saves a mushroom to the database
   saveMushroom: function (mushroomData) {
     return axios.post("/api/mushrooms/", mushroomData);
