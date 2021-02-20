@@ -5,22 +5,12 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-<<<<<<< HEAD
-<<<<<<< HEAD
-import css from "../src/App.css";
-=======
-import API from "./utils/API";
->>>>>>> develop
-=======
 import css from "../src/App.css";
 import API from "./utils/API";
-
->>>>>>> 26042649525d6c3065e9a85da50134649aab23b5
 
 // Import Contexts
 import AuthenticationContext from "./contexts/AuthenticationContext";
 import MushroomContext from "./contexts/MushroomContext";
-
 
 // Import Components
 import Navbar from "./components/Nav/Navbar";
@@ -43,21 +33,12 @@ const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState(null);
   const [userID, setUserID] = useState(null);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  
-  // Mushroom State Variables
-  const [mushrooms, setMushrooms] = useState([]);
->>>>>>> develop
-=======
 
   // Mushroom State Variables
   const [mushrooms, setMushrooms] = useState([]);
->>>>>>> 26042649525d6c3065e9a85da50134649aab23b5
 
   // Mushroom Functions for use with MushroomContext
-  function getMushrooms(){
+  function getMushrooms() {
     API.getMushrooms().then((res) => {
       setMushrooms(res.data);
     });
@@ -150,27 +131,16 @@ const App = () => {
         logout: logout,
       }}
     >
-<<<<<<< HEAD
-
       <div className="backgroundStyle">
-        <MushroomContext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
-        <Router>
-          <Navbar />
+        <MushroomContext.Provider
+          value={{ mushrooms: mushrooms, getMushrooms: getMushrooms }}
+        >
+          <Router>
+            <Navbar />
             {routes}
-        </Router>
+          </Router>
         </MushroomContext.Provider>
-=======
-    
-      <div className="backgroundStyle">
-       <MushroomContext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
-      <Router>
-        <Navbar />
-        {routes}
-      </Router>
-      </MushroomContext.Provider>
->>>>>>> 26042649525d6c3065e9a85da50134649aab23b5
       </div>
-
     </AuthenticationContext.Provider>
   );
 };
