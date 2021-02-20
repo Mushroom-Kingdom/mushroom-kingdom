@@ -15,7 +15,7 @@ export default {
   },
   // Saves a mushroom to the database
   saveMushroom: function (mushroomData) {
-    return axios.post("/api/mushroom", mushroomData);
+    return axios.post("/api/mushrooms/", mushroomData);
   },
 
   // AUTHENTICATION FUNCTIONS

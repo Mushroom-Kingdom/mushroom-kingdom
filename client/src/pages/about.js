@@ -20,66 +20,82 @@ function About() {
     // just add 
     const [mushroomObject, setMushroomObject] = useState({});
 
-    function handleInputChange(event) {
-        const { name, value } = event.target;
-        setMushroomObject({ ...mushroomObject, [name]: value })
 
-    }
-    function deleteMushroom(id) {
-        API.deleteMushroom(id)
-            .then(res => )
-            .catch(err => console.log(err));
-    }
+   
+    // function deleteMushroom(id) {
+    //     API.deleteMushroom(id)
+    //         .then(res => )
+    //         .catch(err => console.log(err));
+    // }
 
 
     function handleMushroomSubmit(event) {
         event.preventDefault();
-        API.saveMushroom({
+        setMushroomObject({
             name: mushroomObject.name,
             description: mushroomObject.description,
             family: mushroomObject.family,
             genus: mushroomObject.genus,
             species: mushroomObject.species,
             toxic: mushroomObject.toxic
-        }).then(res => )
+        })
+        API.saveMushroom({
+
+        }).then(res => {
+            console.log(res);
+            setModalIsOpen(false);
+        }
+        )
             .catch(err => console.log(err));
     }
     // until this line
-    
+
     return (
 
         <div className="about">
             <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
 
             <Modal isOpen={modalIsOpen}>
+                
                 <h3>Name of mushroom to go here</h3>
                 <br />
                 <br />
-                <input placeholder="Name"></input>
+                <input placeholder="Name" onChange={(event) => setMushroomObject}></input>
                 <br />
                 <br />
-                <textArea id="desc" placeholder="Description"></textArea>
+                <textarea id="desc" placeholder="Description" ></textarea>
                 <br />
                 <br />
-                <input placeholder="Toxicity"></input>
+                <select placeholder="Toxicity" >
+                    <option>
+                        Toxic?
+                    </option>
+                    <option value="true">
+                        Yes
+                    </option>
+                    <option value="false">
+                        No
+                    </option>
+                </select>
                 <br />
                 <br />
-                <input placeholder="Family"></input>
+                <input placeholder="Family" ></input>
                 <br />
                 <br />
-                <input placeholder="Genus"></input>
+                <input placeholder="Genus" ></input>
                 <br />
                 <br />
-                <input placeholder="Species"></input>
+                <input placeholder="Species" ></input>
                 <br />
                 <br />
                 <button onClick={() => setModalIsOpen(false)}>Close Modal</button>
-                <button onClick={() => setModalIsOpen(false)}>Save Changes</button>
+                <button onClick={handleMushroomSubmit}>Save Changes</button>
                 <br />
                 <br />
                 <FullList />
 
-            </Modal>
+            </Modal >
+
             <div id="header">
                 <h1>OUR MISSION</h1>
                 <div class="row">
