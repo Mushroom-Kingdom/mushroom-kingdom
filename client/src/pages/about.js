@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import './css/about.css';
 import FullList from './FullList.js';
 
-import API from "../utils/API"; //just add
+
 
 
 // import EditModal from '../components/Modal/EditModal.js';
@@ -15,87 +15,12 @@ var image1 = require('./images/blueOyster.jpg');
 
 function About() {
 
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-
-    // just add 
-    const [mushroomObject, setMushroomObject] = useState({});
-
-
-   
-    // function deleteMushroom(id) {
-    //     API.deleteMushroom(id)
-    //         .then(res => )
-    //         .catch(err => console.log(err));
-    // }
-
-
-    function handleMushroomSubmit(event) {
-        event.preventDefault();
-        setMushroomObject({
-            name: mushroomObject.name,
-            description: mushroomObject.description,
-            family: mushroomObject.family,
-            genus: mushroomObject.genus,
-            species: mushroomObject.species,
-            toxic: mushroomObject.toxic
-        })
-        API.saveMushroom({
-
-        }).then(res => {
-            console.log(res);
-            setModalIsOpen(false);
-        }
-        )
-            .catch(err => console.log(err));
-    }
+    
     // until this line
 
     return (
 
-        <div className="about">
-            <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
-
-            <Modal isOpen={modalIsOpen}>
-                
-                <h3>Name of mushroom to go here</h3>
-                <br />
-                <br />
-                <input placeholder="Name" onChange={(event) => setMushroomObject}></input>
-                <br />
-                <br />
-                <textarea id="desc" placeholder="Description" ></textarea>
-                <br />
-                <br />
-                <select placeholder="Toxicity" >
-                    <option>
-                        Toxic?
-                    </option>
-                    <option value="true">
-                        Yes
-                    </option>
-                    <option value="false">
-                        No
-                    </option>
-                </select>
-                <br />
-                <br />
-                <input placeholder="Family" ></input>
-                <br />
-                <br />
-                <input placeholder="Genus" ></input>
-                <br />
-                <br />
-                <input placeholder="Species" ></input>
-                <br />
-                <br />
-                <button onClick={() => setModalIsOpen(false)}>Close Modal</button>
-                <button onClick={handleMushroomSubmit}>Save Changes</button>
-                <br />
-                <br />
-                <FullList />
-
-            </Modal >
-
+        <div className="about"> 
             <div id="header">
                 <h1>OUR MISSION</h1>
                 <div class="row">
