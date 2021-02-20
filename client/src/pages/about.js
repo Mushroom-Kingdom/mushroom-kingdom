@@ -2,45 +2,16 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import "./css/about.css";
 import FullList from "./FullList.js";
+
 // import EditModal from '../components/Modal/EditModal.js';
 // import { Button } from 'react-bootstrap';
 var image1 = require("./images/blueOyster.jpg");
 
 function About() {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  // until this line
 
   return (
     <div className="about">
-      <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
-
-      <Modal isOpen={modalIsOpen}>
-        <h3>Name of mushroom to go here</h3>
-        <br />
-        <br />
-        <input placeholder="Name"></input>
-        <br />
-        <br />
-        <textArea id="desc" placeholder="Description"></textArea>
-        <br />
-        <br />
-        <input placeholder="Toxicity"></input>
-        <br />
-        <br />
-        <input placeholder="Family"></input>
-        <br />
-        <br />
-        <input placeholder="Genus"></input>
-        <br />
-        <br />
-        <input placeholder="Species"></input>
-        <br />
-        <br />
-        <button onClick={() => setModalIsOpen(false)}>Close Modal</button>
-        <button onClick={() => setModalIsOpen(false)}>Save Changes</button>
-        <br />
-        <br />
-        <FullList />
-      </Modal>
       <div id="header">
         <h1>OUR MISSION</h1>
         <div class="row">
