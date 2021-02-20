@@ -5,11 +5,13 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import css from "../src/App.css";
 import API from "./utils/API";
+
 
 // Import Contexts
 import AuthenticationContext from "./contexts/AuthenticationContext";
-import mushroomcontext from "./contexts/mushroomcontext";
+import MushroomContext from "./contexts/MushroomContext";
 
 
 // Import Components
@@ -33,7 +35,7 @@ const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState(null);
   const [userID, setUserID] = useState(null);
-  
+
   // Mushroom State Variables
   const [mushrooms, setMushrooms] = useState([]);
 
@@ -58,7 +60,6 @@ const App = () => {
     setToken(null);
     setIsAuthenticated(false);
   }, []);
-
 
   let routes;
   if (!isAuthenticated) {
@@ -129,15 +130,19 @@ const App = () => {
         isAuthenticated: isAuthenticated,
         token: token,
         login: login,
-        logout: logout
+        logout: logout,
       }}
     >
-    <mushroomcontext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
+    
+      <div className="backgroundStyle">
+       <MushroomContext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
       <Router>
         <Navbar />
         {routes}
       </Router>
-      </mushroomcontext.Provider>
+      </MushroomContext.Provider>
+      </div>
+
     </AuthenticationContext.Provider>
   );
 };

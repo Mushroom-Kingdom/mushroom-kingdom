@@ -1,12 +1,46 @@
 import React, { useState, useEffect,useContext } from "react";
 import Modal from 'react-modal';
 import ProductCard from "../../../components/ProductCard/ProductCard";
-import mushroomcontext from "../../../contexts/mushroomcontext";
+import MushroomContext from "../../../contexts/MushroomContext";
 import API from "../../../utils/API";
 
 
 function edit(props) {
     console.log(props)
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const mushroom = useContext(MushroomContext);
+
+    useEffect(() => {
+        context.getMushrooms();
+      }, []);
+
+    function handleEditSave(event) {
+        event.preventDefault();
+
+        const mushroomID = props.id;
+        console.log(mushroomID);
+  
+        API.editMushroom(mushroomID).then(res => {
+          mushroom.getMushrooms();
+        });
+      }
+
+    //   function handleMushroomSubmit(event) {
+    //     event.preventDefault();
+    //     const newMushroom = {
+    //         name: mushroomName,
+    //         image_url: mushroomImage,
+    //         description: mushroomDescription,
+    //         family: mushroomFamily,
+    //         genus: mushroomGenus,
+    //         species: mushroomSpecies,
+    //     }
+    //     API.saveMushroom(newMushroom).then(res => {
+    //         context.getMushrooms();
+    //         setModalIsOpen(false);                      
+    //       }).catch(err => console.log(err));
+    // }
+
     return (
     <>
         <button onClick={() => setModalIsOpen(true)}>Add Mushroom</button>
@@ -15,7 +49,7 @@ function edit(props) {
           <h3>Enter Mushroom Details</h3>
           <br />
           <br />
-          <input placeholder="Name" onChange={(event) => setMushroomName(event.target.value)}></input>
+          <input placeholder={props.name} onChange={(event) => setMushroomName(event.target.value)}></input>
           <br />
           <br />
           <textarea id="desc" placeholder="Description" onChange={(event) => setMushroomDescription(event.target.value)}></textarea>
@@ -44,7 +78,7 @@ function edit(props) {
           <br />
           <br />
           <button onClick={() => setModalIsOpen(false)}>Close</button>
-          <button onClick={handleMushroomSubmit}>Save Changes</button>
+          <button onClick={handleEditSave}>Save Changes</button>
           <br />
           <br />
         </Modal >
