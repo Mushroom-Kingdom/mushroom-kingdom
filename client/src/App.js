@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useContext } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -29,7 +29,14 @@ const App = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState(null);
-  const [userID, setUserID] = useState(null); 
+  const [userID, setUserID] = useState(null);   
+
+  // useEffect(() => {
+  //   setIsAdmin(false);
+  //   setIsAuthenticated(false);
+  //   setToken(null);
+  //   setUserID(null);
+  // }, []);
 
   const login = useCallback((userID, isAdmin, token) => {
     setIsAdmin(isAdmin);
@@ -44,6 +51,7 @@ const App = () => {
     setToken(null);
     setIsAuthenticated(false);
   }, []);
+
 
   let routes;
   if (!isAuthenticated) {
@@ -117,7 +125,7 @@ const App = () => {
         isAuthenticated: isAuthenticated,
         token: token,
         login: login,
-        logout: logout,
+        logout: logout
       }}
     >
       <Router>
