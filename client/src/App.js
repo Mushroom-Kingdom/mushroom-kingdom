@@ -28,6 +28,7 @@ import AdminDashboard from "./pages/Admin/Dashboard";
 import AdminProducts from "./pages/Admin/Products";
 import Members from "./pages/Members";
 import NoMatch from "./pages/NoMatch";
+import Order from "./pages/Order";
 
 const App = () => {
   // Authentication State Variables
@@ -102,6 +103,9 @@ const App = () => {
         </Route>
         <Route path="/shop">
           <Shop />
+        </Route>
+        <Route path="/order">
+          <Order />
         </Route>
         <Redirect to="/members" />
       </Switch>
