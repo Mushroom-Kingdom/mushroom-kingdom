@@ -30,12 +30,12 @@ const App = () => {
   const [token, setToken] = useState(null);
   const [userID, setUserID] = useState(null);   
 
-  useEffect(() => {
-    setIsAdmin(false);
-    setIsAuthenticated(false);
-    setToken(null);
-    setUserID(null);
-  }, []);
+  // useEffect(() => {
+  //   setIsAdmin(false);
+  //   setIsAuthenticated(false);
+  //   setToken(null);
+  //   setUserID(null);
+  // }, []);
 
   const login = useCallback((userID, isAdmin, token) => {
     setIsAdmin(isAdmin);
@@ -121,7 +121,7 @@ const App = () => {
         isAuthenticated: isAuthenticated,
         token: token,
         login: login,
-        logout: logout,
+        logout: logout
       }}
     >
       <Router>

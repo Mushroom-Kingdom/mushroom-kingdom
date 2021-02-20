@@ -28,23 +28,11 @@ function ProductCard(props) {
                 <div className="col-md-3">Species | {props.species}</div>
               </div>
             </div>
-<<<<<<< HEAD
-            </div>
-            </div>
-
-
-
-            </div>
-        
-    )
-};
-=======
           </div>
         </div>
       </div>
     </div>
   );
 }
->>>>>>> develop
 
 export default ProductCard;
