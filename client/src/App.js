@@ -5,6 +5,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import css from "../src/App.css";
 
 // Import Contexts
 import AuthenticationContext from "./contexts/AuthenticationContext";
@@ -28,7 +29,7 @@ const App = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState(null);
-  const [userID, setUserID] = useState(null);   
+  const [userID, setUserID] = useState(null);
 
   // useEffect(() => {
   //   setIsAdmin(false);
@@ -50,7 +51,6 @@ const App = () => {
     setToken(null);
     setIsAuthenticated(false);
   }, []);
-
 
   let routes;
   if (!isAuthenticated) {
@@ -121,13 +121,15 @@ const App = () => {
         isAuthenticated: isAuthenticated,
         token: token,
         login: login,
-        logout: logout
+        logout: logout,
       }}
     >
-      <Router>
-        <Navbar />
-        {routes}
-      </Router>
+      <div className="backgroundStyle">
+        <Router>
+          <Navbar />
+          {routes}
+        </Router>
+      </div>
     </AuthenticationContext.Provider>
   );
 };
