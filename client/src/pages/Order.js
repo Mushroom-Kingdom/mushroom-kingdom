@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/order.css';
 import {Form, Button} from 'react-bootstrap';
 
 function Order(){
@@ -30,7 +31,7 @@ function Order(){
             </Form.Group>
             <Form.Group controlId="Message">
                 <Form.Label>Leave a messages</Form.Label>
-                <Form.Control as="textarea" rows={3} />
+                <Form.Control as="textarea" rows={3} placeholder="Tell us which product you want"/>
             </Form.Group>
             <Button variant="primary" type="submit">
                 Submit
