@@ -16,6 +16,7 @@ import MushroomContext from "./contexts/MushroomContext";
 
 // Import Components
 import Navbar from "./components/Nav/Navbar";
+import Footer from "./components/Footer/Footer";
 
 // Import Page Views
 import Home from "./pages/home";
@@ -138,14 +139,13 @@ const App = () => {
       }}
     >
     
-      <div className="backgroundStyle">
        <MushroomContext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
       <Router>
         <Navbar />
         {routes}
+        <Footer />
       </Router>
       </MushroomContext.Provider>
-      </div>
 
     </AuthenticationContext.Provider>
   );
