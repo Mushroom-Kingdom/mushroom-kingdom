@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import MushroomContext from "../../../contexts/MushroomContext";
 import API from "../../../utils/API"; //just add
+import "./style.css";
 
 
 var image1 = require("../../images/blueOyster.jpg");
@@ -48,7 +49,7 @@ function AdminProducts(props) {
 
     return (            
           <>
-            <button onClick={() => setModalIsOpen(true)}>Add Mushroom</button>
+            <button className="add" onClick={() => setModalIsOpen(true)}>Add Mushroom</button>
 
             <Modal isOpen={modalIsOpen}>          
               <h3>Enter Mushroom Details</h3>
