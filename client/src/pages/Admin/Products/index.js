@@ -49,7 +49,7 @@ function AdminProducts(props) {
 
     return (            
           <div className="Product">
-            <button onClick={() => setModalIsOpen(true)}>Add Mushroom</button>
+            <button className="add" onClick={() => setModalIsOpen(true)}>Add Mushroom</button>
 
             <Modal isOpen={modalIsOpen} ariaHideApp={false}>          
               <h3>Enter Mushroom Details</h3>

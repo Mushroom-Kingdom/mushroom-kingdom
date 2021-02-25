@@ -110,7 +110,7 @@ function ProductCard(props) {
         </div>
         <div className="col-md-9">
           <div className="card text-center">
-            <div className="card-header">{props.name}{auth.isAdmin && (<button onClick={handleDelete} className="btn btn-danger float-right"><i className="fas fa-trash-alt"></i></button>)}{auth.isAdmin && (<button onClick={handleEditButton} className="btn btn-info float-right"><i className="fas fa-edit"></i></button>)}</div>
+            <h3 className="card-header">{props.name}{auth.isAdmin && (<button onClick={handleDelete} className="btn btn-danger float-right"><i className="fas fa-trash-alt"></i></button>)}{auth.isAdmin && (<button onClick={handleEditButton} className="btn btn-info float-right"><i className="fas fa-edit"></i></button>)}</h3>
             <div className="card-body">
               <div className="card-title"></div>
               <p className="card-text">{props.description}</p>
