@@ -1,21 +1,46 @@
-html, body {
-    height: 100%;
-}
-
 .home {
     height: 100%;
-    margin-left: 20%;
-    margin-right: 20%;
 }
 
-.home #header{
-    margin: 0 auto;
-    text-align: center;
-    padding: 90px;
-    margin-bottom: 150px;
+
+.home .options{
+    padding-top:10px;
 }
 
-.home #section {
-    margin: 0 auto;
-    text-align: center;
+.home .carousel{
+    margin:auto;
+    height:400px;
+    width:100%;
+    background-color:black;
+    margin-bottom:4rem;
+}
+
+.home .carousel .carousel-inner{
+    height:100%;
+}
+
+.home .carousel .carousel-item{
+    height:100%;
+}
+
+.home .container{
+    margin-bottom: 1.5rem;
+    text-align:center;
+}
+
+.home .col-lg-4{
+    padding: 0 15px;
+    margin: 0 0 24px;
+}
+
+.features-divider{
+    margin: 5rem 0;
+}
+
+.left-row{
+    text-align: left;
+}
+
+.right-row{
+    text-align: right;
 }

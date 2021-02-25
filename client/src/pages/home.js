@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import AuthenticationContext from "../contexts/AuthenticationContext";
+import {Button, Carousel, Container, Row, Col, Image} from 'react-bootstrap';
 import "./css/home.css";
 
 function Home() {
@@ -7,28 +8,77 @@ function Home() {
 
   return (
     <div className="home">
-      <div id="header">
-        <h1>
-          Come one, come all! The MUSHROOM-KINGDOM has plenty of beautiful,
-          healthy organic mushrooms for everyone!
-        </h1>
-        <br />
-        <h1>
-          THE MUSHROOM FARM SHOULD BE FULLY FUNCTIONING BEFORE THE END OF THE
-          WEEK!
-        </h1>
-        <div>
-          {!auth.isAuthenticated && <a href="/signup">Become a member</a>}
-        </div>
-        <div>{!auth.isAuthenticated && <a href="/login">Login</a>}</div>
-      </div>
-      <div id="section">
-        <h1>Section</h1>
-        <br />
-        <h1>Section</h1>
-        <br />
-        <h1>Section</h1>
-      </div>
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="holder.js/800x400?text=First slide&bg=373940"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="holder.js/800x400?text=First slide&bg=373940"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>second slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="holder.js/800x400?text=First slide&bg=373940"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>third slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+        <Container>
+          <Row>
+            <Col md={4} lg={4}>
+              <h2>Heading</h2>
+              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            </Col>
+            <Col md={4} lg={4}>
+              <h2>Heading</h2>
+              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            </Col>
+            <Col md={4} lg={4}>
+              <h2>Heading</h2>
+              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            </Col>
+          </Row>
+          <hr className="features-divider"></hr>
+          <Row className="left-row">
+            <Col md={7} lg={7}>
+              <h2>Heading</h2>
+              <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </Col>
+            <Col md={5} lg={5}>
+              <Image fluid mx-auto style={{width:"500px", height:"500px"}}></Image>
+            </Col>
+          </Row>
+          <hr className="features-divider"></hr>
+          <Row className="right-row">
+            <Col md={5} lg={5}>
+              <Image fluid mx-auto style={{width:"500px", height:"500px"}}></Image>
+            </Col>
+            <Col md={7} lg={7}>
+              <h2>Heading</h2>
+              <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </Col>
+          </Row>
+        </Container>
     </div>
   );
 }

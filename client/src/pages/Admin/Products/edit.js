@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import MushroomContext from "../../../contexts/MushroomContext";
 import API from "../../../utils/API";
-
+import './style.css';
 
 function edit(props) {
     console.log(props)
@@ -23,23 +23,7 @@ function edit(props) {
         API.editMushroom(mushroomID).then(res => {
           mushroom.getMushrooms();
         });
-      }
-
-    //   function handleMushroomSubmit(event) {
-    //     event.preventDefault();
-    //     const newMushroom = {
-    //         name: mushroomName,
-    //         image_url: mushroomImage,
-    //         description: mushroomDescription,
-    //         family: mushroomFamily,
-    //         genus: mushroomGenus,
-    //         species: mushroomSpecies,
-    //     }
-    //     API.saveMushroom(newMushroom).then(res => {
-    //         context.getMushrooms();
-    //         setModalIsOpen(false);                      
-    //       }).catch(err => console.log(err));
-    // }
+      }    
 
     return (
     <>
@@ -49,10 +33,10 @@ function edit(props) {
           <h3>Enter Mushroom Details</h3>
           <br />
           <br />
-          <input placeholder={props.name} onChange={(event) => setMushroomName(event.target.value)}></input>
+          <input defaultValue={props.name} onChange={(event) => setMushroomName(event.target.value)}></input>
           <br />
           <br />
-          <textarea id="desc" placeholder="Description" onChange={(event) => setMushroomDescription(event.target.value)}></textarea>
+          <textarea id="desc" defaultValue={props.description} onChange={(event) => setMushroomDescription(event.target.value)}></textarea>
           <br />
           <br />
           <select placeholder="Toxicity" onChange={(event) => setMushroomIsToxic(event.target.value)}>
@@ -68,13 +52,13 @@ function edit(props) {
           </select>
           <br />
           <br />
-          <input placeholder="Family" onChange={(event) => setMushroomFamily(event.target.value)}></input>
+          <input defaultValue={props.family} onChange={(event) => setMushroomFamily(event.target.value)}></input>
           <br />
           <br />
-          <input placeholder="Genus" onChange={(event) => setMushroomGenus(event.target.value)}></input>
+          <input defaultValue={props.genus} onChange={(event) => setMushroomGenus(event.target.value)}></input>
           <br />
           <br />
-          <input placeholder="Species" onChange={(event) => setMushroomSpecies(event.target.value)}></input>
+          <input defaultValue={props.species} onChange={(event) => setMushroomSpecies(event.target.value)}></input>
           <br />
           <br />
           <button onClick={() => setModalIsOpen(false)}>Close</button>

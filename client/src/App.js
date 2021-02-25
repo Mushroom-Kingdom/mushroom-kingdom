@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +14,7 @@ import MushroomContext from "./contexts/MushroomContext";
 
 // Import Components
 import Navbar from "./components/Nav/Navbar";
+import Footer from "./components/Footer/Footer";
 
 // Import Page Views
 import Home from "./pages/home";
@@ -135,16 +136,14 @@ const App = () => {
         logout: logout,
       }}
     >
-      <div className="backgroundStyle">
-        <MushroomContext.Provider
-          value={{ mushrooms: mushrooms, getMushrooms: getMushrooms }}
-        >
-          <Router>
-            <Navbar />
-            {routes}
-          </Router>
-        </MushroomContext.Provider>
-      </div>
+      <MushroomContext.Provider
+        value={{ mushrooms: mushrooms, getMushrooms: getMushrooms }}
+      >
+        <Router>
+          <Navbar />
+          {routes}
+        </Router>
+      </MushroomContext.Provider>
     </AuthenticationContext.Provider>
   );
 };

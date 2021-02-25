@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import MushroomContext from "../../../contexts/MushroomContext";
 import API from "../../../utils/API"; //just add
+import "./style.css";
 
 var image1 = require("../../images/blueOyster.jpg");
 
@@ -27,30 +28,13 @@ function AdminProducts(props) {
     context.getMushrooms();
   }, []);
 
-  function handleMushroomSubmit(event) {
-    event.preventDefault();
-    const newMushroom = {
-      name: mushroomName,
-      image_url: mushroomImage,
-      description: mushroomDescription,
-      family: mushroomFamily,
-      genus: mushroomGenus,
-      species: mushroomSpecies,
-      toxic: mushroomIsToxic,
-    };
-    API.saveMushroom(newMushroom)
-      .then((res) => {
-        context.getMushrooms();
-        setModalIsOpen(false);
-      })
-      .catch((err) => console.log(err));
-  }
-
   return (
-    <>
-      <button onClick={() => setModalIsOpen(true)}>Add Mushroom</button>
+    <div className="Product">
+      <button className="add" onClick={() => setModalIsOpen(true)}>
+        Add Mushroom
+      </button>
 
-      <Modal isOpen={modalIsOpen}>
+      <Modal isOpen={modalIsOpen} ariaHideApp={false}>
         <h3>Enter Mushroom Details</h3>
         <br />
         <br />
@@ -118,7 +102,7 @@ function AdminProducts(props) {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

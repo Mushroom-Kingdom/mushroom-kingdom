@@ -8,7 +8,7 @@ function Navb() {
 
   return (
     <Navbar bg="light" expand="lg">
-    <Navbar.Brand href="#home">Mushroom-Kingdom</Navbar.Brand>
+    <Navbar.Brand href="/home">Mushroom-Kingdom</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
@@ -22,6 +22,7 @@ function Navb() {
         
       </Nav>
       <Form inline>
+        <Nav.Link href="/login"><i className="fas fa-user"></i></Nav.Link>
         {auth.isAuthenticated && (
           <Button variant="outline-success" onClick={auth.logout}>Logout</Button>
         )}
