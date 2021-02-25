@@ -11,11 +11,11 @@ function Cloudinary() {
   const uploadImage = () => {
     console.log(imageSelected);
     const formData = new FormData();
-    formData.append("signature", process.env.CLOUDINARY_KEY);
+    formData.append("signature", process.env.REACT_APP_CLOUDINARY_KEY);
     formData.append("file", imageSelected);
     formData.append("upload_preset", "iuzrd2er");
 
-    cloudinary.utils.api_sign_request(params_to_sign, api_secret);
+    // Cloudinary.utils.api_sign_request(params_to_sign, api_secret);
 
     Axios.post(
       "https://api.cloudinary.com/v1_1/djdhvwysz/image/upload",
