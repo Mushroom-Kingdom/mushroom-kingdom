@@ -7,14 +7,14 @@ export default {
   },
   // Gets the mushroom with the given id
   getMushroomId: function (id) {
-    return axios.get("/api/mushroom/" + id);
+    return axios.get("/api/mushrooms/" + id);
   },
   // Deletes the mushroom with the given id
   deleteMushroom: function (id) {
     return axios.delete("/api/mushrooms/" + id);
   },
-  editMushroom: function (id) {
-    return axios.put("/api/mushrooms/" + id);
+  editMushroom: function (mushroomData) {
+    return axios.put(`/api/mushrooms/${mushroomData._id}`, mushroomData);
   },
   // Saves a mushroom to the database
   saveMushroom: function (mushroomData) {

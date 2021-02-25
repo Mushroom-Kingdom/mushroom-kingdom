@@ -22,7 +22,7 @@ function Navb() {
         
       </Nav>
       <Form inline>
-        <Nav.Link href="/login"><i class="fas fa-user"></i></Nav.Link>
+        <Nav.Link href="/login"><i className="fas fa-user"></i></Nav.Link>
         {auth.isAuthenticated && (
           <Button variant="outline-success" onClick={auth.logout}>Logout</Button>
         )}
