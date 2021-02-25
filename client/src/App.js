@@ -143,7 +143,6 @@ const App = () => {
       <Router>
         <Navbar />
         {routes}
-        <Footer />
       </Router>
       </MushroomContext.Provider>
 
