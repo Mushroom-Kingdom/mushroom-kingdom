@@ -42,10 +42,14 @@ mongoose
     useFindAndModify: false,
     useUnifiedTopology: true,
     useCreateIndex: true,
+  }).then(() => {
+    console.log("Connected to database successfully.")
   })
   .catch((err) => {
       console.log(err);
     });
+
+
   app.listen(PORT, function () {
     console.log(`🌎 ==> Server is now running on port ${PORT}!`);
   }); 
