@@ -1,21 +1,29 @@
-html, body {
-    height: 100%;
-}
-
 .home {
     height: 100%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .home #header{
     margin: 0 auto;
     text-align: center;
+    text-justify: inter-word;
     padding: 90px;
-    margin-bottom: 150px;
 }
 
 .home #section {
+    padding:90px;
     margin: 0 auto;
-    text-align: center;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.home .options{
+    padding-top:10px;
+}
+
+.home .carousel{
+    display:block;
+    height:400px;
+    margin-top: 15px;
 }

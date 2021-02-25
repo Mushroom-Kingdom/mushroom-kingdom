@@ -1,0 +1,12 @@
+footer{
+    margin-top: 20px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding:20px;
+}
+
+#copyright{
+    margin:0;
+}

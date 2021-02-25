@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import MushroomContext from "../../../contexts/MushroomContext";
 import API from "../../../utils/API";
-
+import './style.css';
 
 function edit(props) {
     console.log(props)
