@@ -1,24 +1,16 @@
 const router = require("express").Router();
 const mushroomController = require("../../controllers/mushroomController");
+const adminAuth = require("../../middleware/auth");
 
-// Matches with "/api/mushroom"
-router
-  .route("/")
-  .get(mushroomController.findAll)
-  .post(mushroomController.create);
+// Matches with "/api/mushrooms"
+router.get("/", mushroomController.findAll);
 
-// Matches with "/api/mushroom/:id"
-router
-  .route("/:id")
-  .get(mushroomController.findById)
-  .put(mushroomController.update)
-  .delete(mushroomController.remove);
+// Matches with "/api/mushrooms/:id"
+router.get("/:id", mushroomController.findById);  
 
-// Matches with "/api/mushroom/:id"
-router
-  .route("/:id")
-  .get(mushroomController.findById)
-  .put(mushroomController.update)
-  .delete(mushroomController.remove);
+// Routes that need admin authentication
+router.post("/", adminAuth, mushroomController.create);
+router.put("/:id", adminAuth, mushroomController.update);
+router.delete("/:id", adminAuth, mushroomController.remove);
 
 module.exports = router;

@@ -7,13 +7,18 @@ module.exports = (req, res, next) => {
     }
 
     try {
+        console.log(req.headers.authorization);
         const token = req.headers.authorization.split(" ")[1]; // Authorization: "BEARER TOKEN", need to split the string
         if(!token){
             throw new Error("Authentication Failed!");
         }
 
         let decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-        req.userData = {userID: decodedToken.userID, isAdmin: decodedToken.isAdmin}
+        
+        if(!decodedToken.isAdmin){
+            throw new Error("Authentication Failed!");
+        }
+
         next();
     }catch (err) {
         console.log(err);

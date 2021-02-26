@@ -8,9 +8,7 @@ import Modal from "react-modal";
 // var blue = require("../../pages/images/blueOyster.jpg");
 let existingMushroom = {};
 
-function ProductCard(props) {
-  const auth = useContext(AuthenticationContext);
-  const context = useContext(MushroomContext);
+function ProductCard(props) {  
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [mushroomName, setMushroomName] = useState("");
@@ -21,9 +19,13 @@ function ProductCard(props) {
   const [mushroomSpecies, setMushroomSpecies] = useState("");
   const [mushroomIsToxic, setMushroomIsToxic] = useState(false);
 
+  // Context state variables
+  const auth = useContext(AuthenticationContext);
+  const context = useContext(MushroomContext);
+
   function handleDelete() {
     const mushroomID = props.id;
-    API.deleteMushroom(mushroomID).then((res) => {
+    API.deleteMushroom(mushroomID, auth.token).then((res) => {
       context.getMushrooms();
     });
   }
@@ -53,7 +55,7 @@ function ProductCard(props) {
       existingMushroom[0].species = mushroomSpecies;
     }
 
-    API.editMushroom(existingMushroom[0])
+    API.editMushroom(existingMushroom[0], auth.token)
       .then((res) => {
         setModalIsOpen(false);
         context.getMushrooms();

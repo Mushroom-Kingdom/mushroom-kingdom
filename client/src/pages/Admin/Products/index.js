@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Modal from "react-modal";
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import MushroomContext from "../../../contexts/MushroomContext";
+import AuthenticationContext from "../../../contexts/AuthenticationContext";
 import API from "../../../utils/API"; //just add
 // import Cloudinary from "../../../components/CloudinaryContext/index";
 import "./style.css";
@@ -11,7 +12,7 @@ import "./style.css";
 function AdminProducts(props) {
   // Modal State variables
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const mushroom = useContext(MushroomContext);
+  
 
   // Mushroom State variables
   const [imageSelected, setImageSelected] = useState("");
@@ -25,6 +26,7 @@ function AdminProducts(props) {
 
   // Context variables
   const context = useContext(MushroomContext);
+  const auth = useContext(AuthenticationContext);
 
   useEffect(() => {
     context.getMushrooms();
@@ -55,7 +57,7 @@ function AdminProducts(props) {
       genus: mushroomGenus,
       species: mushroomSpecies,
     };
-    API.saveMushroom(newMushroom)
+    API.saveMushroom(newMushroom, auth.token)
       .then((res) => {
         context.getMushrooms();
         setModalIsOpen(false);
