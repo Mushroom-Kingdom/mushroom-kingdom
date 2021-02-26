@@ -3,6 +3,11 @@ import AuthenticationContext from "../contexts/AuthenticationContext";
 import {Button, Carousel} from 'react-bootstrap';
 import "./css/home.css";
 
+var carousel1 = require("./images/carousel-img1.jpg");
+var carousel2 = require("./images/carousel-img2.png");
+var carousel3 = require("./images/carousel-img3.jpg");
+
+
 function Home() {
   const auth = useContext(AuthenticationContext);
 
@@ -34,7 +39,7 @@ function Home() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=First slide&bg=373940"
+              src={carousel1} width="" height="400" alt=""
               alt="First slide"
             />
             <Carousel.Caption>
@@ -45,7 +50,7 @@ function Home() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=282c34"
+              src={carousel2} width="" height="400" alt=""
               alt="Second slide"
             />
 
@@ -57,7 +62,7 @@ function Home() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=20232a"
+              src={carousel3} width="" height="400" alt=""
               alt="Third slide"
             />
 
