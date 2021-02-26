@@ -33,22 +33,12 @@ function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <img
-<<<<<<< HEAD
-              className="d-block w-100"
-<<<<<<< HEAD
-              src={carousel2} width="" height="400" alt=""
-              alt="Second slide"
-=======
-              src="holder.js/800x400?text=First slide&bg=373940"
-              alt="First slide"
->>>>>>> develop
-=======
+
               // className="d-block w-100"
               src={cham}
               alt="First slide"
               width="100%"
               height="100%"
->>>>>>> develop
             />
             <Carousel.Caption>
               <h3>Mushroom Farm Completed!</h3>
@@ -57,23 +47,12 @@ function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <img
-<<<<<<< HEAD
-              className="d-block w-100"
-<<<<<<< HEAD
-              src={carousel3} width="" height="400" alt=""
-              alt="Third slide"
-=======
-              src="holder.js/800x400?text=First slide&bg=373940"
-              alt="First slide"
->>>>>>> develop
-=======
-
               // className="d-block w-100"
               src={care}
               alt="First slide"
               width="100%"
               height="100%"
->>>>>>> develop
+
             />
             <Carousel.Caption>
               <h1>Questions or Inquiries?</h1>
