@@ -3,6 +3,7 @@ import AuthenticationContext from "../contexts/AuthenticationContext";
 import {Button, Carousel, Container, Row, Col, Image} from 'react-bootstrap';
 import "./css/home.css";
 
+
 var range = require("./images/rangeme.png");
 var rail = require("./images/rail.png");
 var sant = require("./images/sant.png");
@@ -18,6 +19,7 @@ function Home() {
         <Carousel>
           <Carousel.Item>
             <img
+
               // className="d-block w-100"
               src={king}
               alt="First slide"
@@ -44,6 +46,7 @@ function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <img
+
               // className="d-block w-100"
               src={care}
               alt="First slide"
