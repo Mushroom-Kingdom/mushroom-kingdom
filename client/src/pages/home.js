@@ -3,7 +3,6 @@ import AuthenticationContext from "../contexts/AuthenticationContext";
 import {Button, Carousel, Container, Row, Col, Image} from 'react-bootstrap';
 import "./css/home.css";
 
-
 var range = require("./images/rangeme.png");
 var rail = require("./images/rail.png");
 var sant = require("./images/sant.png");

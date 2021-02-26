@@ -145,7 +145,7 @@ const App = () => {
         {routes}
       </Router>
       </MushroomContext.Provider>
-
+      {/* <Footer /> */}
     </AuthenticationContext.Provider>
   );
 };
