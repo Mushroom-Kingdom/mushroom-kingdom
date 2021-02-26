@@ -7,17 +7,21 @@
 
 .about {
     height: 100%;
+    width:1000px;
+
+    text-align: center;
     
+    top:70px;
+    padding: 20px;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.about #header{
-    margin: 0 auto;
-    text-align: center;
-    padding: 90px;
-    margin-bottom: 150px;
+.about #paragraph{
+    text-align: justify;
 }
 
-.about #section {
-    margin: 0 auto;
-    text-align: center;
+.about #section #paragraph-image{
+    float: left;
 }

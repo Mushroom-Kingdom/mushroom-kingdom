@@ -31,6 +31,7 @@ function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <img
+
               // className="d-block w-100"
               src={cham}
               alt="First slide"
@@ -49,6 +50,7 @@ function Home() {
               alt="First slide"
               width="100%"
               height="100%"
+
             />
             <Carousel.Caption>
               <h1 id="q">Questions or Inquiries?</h1>

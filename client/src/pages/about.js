@@ -12,23 +12,23 @@ function About() {
 
   return (
     <div className="about">
-      <div id="header">
+      <div id="section">
         <h1>OUR MISSION</h1>
-        <div class="row">
-          <div class="col-md-4">
-            <img src={image1} width="400" height="400" alt=""></img>
-          </div>
-          <div class="col-md-6" class="mission">
-            <p>
-              Our mission at the Mushroom Kingdom is simple: to provide high
+        <p id="paragraph">
+          Our mission at the Mushroom Kingdom is simple: to provide high
               quality mushrooms for an affordable price.{" "}
-            </p>
-          </div>
-        </div>
+        </p>
+
       </div>
       <div id="section">
+
+        <img src={image1} width="960" height="500" alt=""></img>
+
+        <br />
+        
         <h1>History</h1>
-        <p>
+        <img id="paragraph-image" src={image1} width="300" height="300" alt=""></img>
+        <p id="paragraph">
           The Mushroom Kingdom has modest beginnings with two friends from high
           school, Nick Pasch and Bryce Van Note, searching for their calling in
           a pandemic-stricken world. Nick had just dropped out of college and
@@ -41,9 +41,15 @@ function About() {
           the highest quality fungus for affordable rates, an obstacle we hope
           to overcome with evermore success.
         </p>
+        
         <br />
-        <h1>How We Grow</h1>
-        <p>
+        <br />
+        <br />
+        <br />
+
+        <h1 class="center">How We Grow</h1>
+        <img id="paragraph-image" src={image1} width="300" height="300" alt=""></img>
+        <p id="paragraph">
           Our entirely organic mushroom farm operates using techniques that were
           popularized in the past few decades. We begin by using organic Wild
           Bird Seed, which we rinse clean and let soak for a period of 24 hours.
@@ -62,7 +68,9 @@ function About() {
         </p>
         <br />
         <h1>Section</h1>
-        <p></p>
+        <p id="paragraph">
+          Comming soon!
+        </p>
       </div>
     </div>
   );

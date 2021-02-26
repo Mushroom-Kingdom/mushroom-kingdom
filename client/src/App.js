@@ -156,7 +156,7 @@ const App = () => {
       </div>
       <Footer className='Footer' />
       </MushroomContext.Provider>
-
+      {/* <Footer /> */}
     </AuthenticationContext.Provider>
     
     
