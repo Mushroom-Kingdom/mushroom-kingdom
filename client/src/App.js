@@ -26,6 +26,7 @@ import Signup from "./pages/Authentication/Signup";
 import Login from "./pages/Authentication/Login";
 import AdminLogin from "./pages/Admin/Login";
 import AdminDashboard from "./pages/Admin/Dashboard";
+import AdminOrders from "./pages/Admin/Orders";
 import AdminProducts from "./pages/Admin/Products";
 import Members from "./pages/Members";
 import NoMatch from "./pages/NoMatch";
@@ -116,11 +117,17 @@ const App = () => {
   if (isAuthenticated && isAdmin) {
     routes = (
       <Switch>
+        <Route exact path="/admin">
+          <AdminDashboard />
+        </Route>
         <Route path="/admin/dashboard">
           <AdminDashboard />
         </Route>
         <Route path="/admin/products">
           <AdminProducts />
+        </Route>
+        <Route path="/admin/orders">
+          <AdminOrders />
         </Route>
         <Redirect to="/admin/dashboard" />
       </Switch>
@@ -143,7 +150,7 @@ const App = () => {
        <MushroomContext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
       <div className="Content">
       <Router>
-        <Navbar />
+        {!isAdmin && <Navbar />}
         {routes}
       </Router>
       </div>
