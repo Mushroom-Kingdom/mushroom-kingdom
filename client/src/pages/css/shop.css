@@ -3,6 +3,12 @@
     margin-bottom: 40px;
 }
 
-#copyright {
-    height: auto;
+
+#but {
+    margin-top: auto 20px ;
+    margin-left: auto 960px;
+    font-size: 24px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 12px;
 }
