@@ -154,7 +154,9 @@ function ProductCard(props) {
               </div>
             </div>
           </div>
+          
         </div>
+        
       </div>
       <br />
       <br />

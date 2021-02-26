@@ -3,7 +3,6 @@ import AuthenticationContext from "../contexts/AuthenticationContext";
 import {Button, Carousel, Container, Row, Col, Image} from 'react-bootstrap';
 import "./css/home.css";
 
-
 var range = require("./images/rangeme.png");
 var rail = require("./images/rail.png");
 var sant = require("./images/sant.png");
@@ -17,9 +16,8 @@ function Home() {
   return (
     <div className="home">
         <Carousel>
-          <Carousel.Item>
+          <Carousel.Item >
             <img
-
               // className="d-block w-100"
               src={king}
               alt="First slide"
@@ -40,13 +38,12 @@ function Home() {
               height="100%"
             />
             <Carousel.Caption>
-              <h3>Mushroom Farm Completed!</h3>
-              <p>As of 2/21/21, the mushroom farm is operating and can be seen in the image.</p>
+              <h3 id="care">Mushroom Farm Completed!</h3>
+              <p id="care">As of 2/21/21, the mushroom farm is operating and can be seen in the image.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
-
               // className="d-block w-100"
               src={care}
               alt="First slide"
@@ -54,8 +51,8 @@ function Home() {
               height="100%"
             />
             <Carousel.Caption>
-              <h1>Questions or Inquiries?</h1>
-              <p>Please let us know!</p>
+              <h1 id="q">Questions or Inquiries?</h1>
+              <p id="q">Please let us know!</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

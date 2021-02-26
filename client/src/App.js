@@ -135,6 +135,7 @@ const App = () => {
   }
 
   return (
+    <>
     <AuthenticationContext.Provider
       value={{
         userID: userID,
@@ -147,13 +148,19 @@ const App = () => {
     >
     
        <MushroomContext.Provider value={{mushrooms: mushrooms, getMushrooms: getMushrooms}}>
+      <div className="Content">
       <Router>
         {!isAdmin && <Navbar />}
         {routes}
       </Router>
+      </div>
+      <Footer className='Footer' />
       </MushroomContext.Provider>
 
     </AuthenticationContext.Provider>
+    
+    
+    </>
   );
 };
 
