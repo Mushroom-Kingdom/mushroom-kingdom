@@ -133,7 +133,7 @@ function ProductCard(props) {
               {auth.isAdmin && (
                 <button
                   onClick={handleEditButton}
-                  className="btn btn-info float-right"
+                  className="btn btn-dark float-right"
                 >
                   <i className="fas fa-edit"></i>
                 </button>
