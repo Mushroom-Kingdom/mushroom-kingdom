@@ -1,116 +1,144 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import AuthenticationContext from "../../contexts/AuthenticationContext";
 import MushroomContext from "../../contexts/MushroomContext";
 import API from "../../utils/API";
 import "./productcard.css";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 
-var blue = require("../../pages/images/blueOyster.jpg");
+// var blue = require("../../pages/images/blueOyster.jpg");
 let existingMushroom = {};
 
-function ProductCard(props) {
-
-  const auth = useContext(AuthenticationContext);
-  const context = useContext(MushroomContext);
+function ProductCard(props) {  
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [mushroomName, setMushroomName] = useState("");
   const [mushroomDescription, setMushroomDescription] = useState("");
-  const [mushroomImage, setMushroomImage] = useState(blue); // change this later
+  const [mushroomImage, setMushroomImage] = useState(""); // change this later
   const [mushroomFamily, setMushroomFamily] = useState("");
   const [mushroomGenus, setMushroomGenus] = useState("");
   const [mushroomSpecies, setMushroomSpecies] = useState("");
-  const [mushroomIsToxic, setMushroomIsToxic] = useState(false);  
+  const [mushroomIsToxic, setMushroomIsToxic] = useState(false);
 
-  
+  // Context state variables
+  const auth = useContext(AuthenticationContext);
+  const context = useContext(MushroomContext);
 
   function handleDelete() {
     const mushroomID = props.id;
-    API.deleteMushroom(mushroomID).then(res => {
+    API.deleteMushroom(mushroomID, auth.token).then((res) => {
       context.getMushrooms();
     });
   }
 
   function handleEditButton() {
-    setModalIsOpen(true)
+    setModalIsOpen(true);
     const mushroomID = props.id;
-    existingMushroom = context.mushrooms.filter(mushroom => {
-      return (
-        mushroom._id === mushroomID
-      )      
+    existingMushroom = context.mushrooms.filter((mushroom) => {
+      return mushroom._id === mushroomID;
     });
   }
 
   function handleEditSave() {
-    if(mushroomName !== ""){
+    if (mushroomName !== "") {
       existingMushroom[0].name = mushroomName;
     }
-    if(mushroomDescription !== ""){
+    if (mushroomDescription !== "") {
       existingMushroom[0].description = mushroomDescription;
     }
-    if(mushroomFamily !== ""){
+    if (mushroomFamily !== "") {
       existingMushroom[0].family = mushroomFamily;
     }
-    if(mushroomGenus !== ""){
+    if (mushroomGenus !== "") {
       existingMushroom[0].genus = mushroomGenus;
     }
-    if(mushroomSpecies !== ""){
+    if (mushroomSpecies !== "") {
       existingMushroom[0].species = mushroomSpecies;
-    }   
+    }
 
-    API.editMushroom(existingMushroom[0]).then(res => {
-      setModalIsOpen(false);
-      context.getMushrooms();
-    }).catch(err => console.log(err));
+    API.editMushroom(existingMushroom[0], auth.token)
+      .then((res) => {
+        setModalIsOpen(false);
+        context.getMushrooms();
+      })
+      .catch((err) => console.log(err));
   }
-  
 
   return (
     <div className="container">
-      <Modal isOpen={modalIsOpen} ariaHideApp={false}>          
+      <Modal isOpen={modalIsOpen} ariaHideApp={false}>
         <h3>Enter Mushroom Details</h3>
         <br />
         <br />
-        <input defaultValue={props.name} onChange={(event) => setMushroomName(event.target.value)}></input>
+        <input
+          defaultValue={props.name}
+          onChange={(event) => setMushroomName(event.target.value)}
+        ></input>
         <br />
         <br />
-        <textarea defaultValue={props.description} onChange={(event) => setMushroomDescription(event.target.value)}></textarea>
+        <textarea
+          defaultValue={props.description}
+          onChange={(event) => setMushroomDescription(event.target.value)}
+        ></textarea>
         <br />
         <br />
-        <select defaultValue={props.toxic} onChange={(event) => setMushroomIsToxic(event.target.value)}>
-            <option>
-                Toxic?
-            </option>
-            <option value={true}>
-                Yes
-            </option>
-            <option value={false}>
-                No
-            </option>
+        <select
+          defaultValue={props.toxic}
+          onChange={(event) => setMushroomIsToxic(event.target.value)}
+        >
+          <option>Toxic?</option>
+          <option value={true}>Yes</option>
+          <option value={false}>No</option>
         </select>
         <br />
         <br />
-        <input defaultValue={props.family} onChange={(event) => setMushroomFamily(event.target.value)}></input>
+        <input
+          defaultValue={props.family}
+          onChange={(event) => setMushroomFamily(event.target.value)}
+        ></input>
         <br />
         <br />
-        <input defaultValue={props.genus} onChange={(event) => setMushroomGenus(event.target.value)}></input>
+        <input
+          defaultValue={props.genus}
+          onChange={(event) => setMushroomGenus(event.target.value)}
+        ></input>
         <br />
         <br />
-        <input defaultValue={props.species} onChange={(event) => setMushroomSpecies(event.target.value)}></input>
+        <input
+          defaultValue={props.species}
+          onChange={(event) => setMushroomSpecies(event.target.value)}
+        ></input>
         <br />
         <br />
         <button onClick={() => setModalIsOpen(false)}>Close</button>
         <button onClick={handleEditSave}>Save Changes</button>
         <br />
         <br />
-      </Modal >
+      </Modal>
       <div className="row">
         <div className="col-md-3">
-          <img src={blue} width="100%" />
+          <img src={props.image_url} width="100%" />
         </div>
         <div className="col-md-9">
           <div className="card text-center">
-            <h3 className="card-header">{props.name}{auth.isAdmin && (<button onClick={handleDelete} className="btn btn-danger float-right"><i className="fas fa-trash-alt"></i></button>)}{auth.isAdmin && (<button onClick={handleEditButton} className="btn btn-info float-right"><i className="fas fa-edit"></i></button>)}</h3>
+            <h3 className="card-header">
+              {props.name}
+              {auth.isAdmin && (
+                <button
+                  onClick={handleDelete}
+                  className="btn btn-danger float-right"
+                >
+                  <i className="fas fa-trash-alt"></i>
+                </button>
+              )}
+              {auth.isAdmin && (
+                <button
+                  onClick={handleEditButton}
+                  className="btn btn-dark float-right"
+                >
+                  <i className="fas fa-edit"></i>
+                </button>
+              )}
+            </h3>
             <div className="card-body">
               <div className="card-title"></div>
               <p className="card-text">{props.description}</p>
@@ -126,10 +154,12 @@ function ProductCard(props) {
               </div>
             </div>
           </div>
+          
         </div>
+        
       </div>
-      <br/>
-      <br/>
+      <br />
+      <br />
     </div>
   );
 }
