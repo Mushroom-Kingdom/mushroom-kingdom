@@ -104,6 +104,7 @@ function ProductCard(props) {
         <br />
         <br />
       </Modal >
+      
       <div className="row">
         <div className="col-md-3">
           <img src={blue} width="100%" />
@@ -126,7 +127,9 @@ function ProductCard(props) {
               </div>
             </div>
           </div>
+          
         </div>
+        
       </div>
       <br/>
       <br/>

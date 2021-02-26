@@ -9,7 +9,7 @@
 
 .home .carousel{
     margin:auto;
-    height:400px;
+    height:700px;
     width:100%;
     background-color:black;
     margin-bottom:4rem;
@@ -46,11 +46,22 @@
 }
 
 #front {
-    color: purple;
+    color: white;
     font-weight: bold;
+    font-size: 120px;
+    text-shadow: 6px 6px black;
 }
 
 #care {
-    color:blue;
+    color:white;
     font-weight: bold;
+    font-size: 35px;
+    text-shadow: 3px 3px black;
+}
+
+#q {
+    color:white;
+    font-weight: bold;
+    font-size: 100px;
+    text-shadow: 4px 4px black;
 }
