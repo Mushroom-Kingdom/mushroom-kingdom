@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -143,7 +143,6 @@ const App = () => {
       <Router>
         <Navbar />
         {routes}
-        <Footer />
       </Router>
       </MushroomContext.Provider>
 

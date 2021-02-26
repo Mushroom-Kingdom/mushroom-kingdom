@@ -6,11 +6,12 @@ import "./productcard.css";
 import Modal from 'react-modal';
 
 var blue = require("../../pages/images/blueOyster.jpg");
+let existingMushroom = {};
 
 function ProductCard(props) {
 
   const auth = useContext(AuthenticationContext);
-  const mushroom = useContext(MushroomContext);
+  const context = useContext(MushroomContext);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [mushroomName, setMushroomName] = useState("");
@@ -21,75 +22,81 @@ function ProductCard(props) {
   const [mushroomSpecies, setMushroomSpecies] = useState("");
   const [mushroomIsToxic, setMushroomIsToxic] = useState(false);  
 
+  
+
   function handleDelete() {
     const mushroomID = props.id;
-    console.log(mushroomID);
     API.deleteMushroom(mushroomID).then(res => {
-      mushroom.getMushrooms();
+      context.getMushrooms();
     });
   }
 
   function handleEditButton() {
     setModalIsOpen(true)
     const mushroomID = props.id;
-    const existingMushroom = mushroom.mushrooms.filter(mushroom => {
+    existingMushroom = context.mushrooms.filter(mushroom => {
       return (
         mushroom._id === mushroomID
-      )
-      
-    })
-    console.log(existingMushroom[0])
-    console.log(mushroomID);
-    API.getMushrooms(mushroomID).then(res => {
-
-    })
-  }
-  function handleEditSave() {
-    const mushroomID = props.id;
-    console.log(mushroomID);
-
-    API.editMushroom(mushroomID).then(res => {
-      mushroom.getMushrooms();
+      )      
     });
   }
-  // name: mushroomName,
-  // image_url: mushroomImage,
-  // description: mushroomDescription,
-  // family: mushroomFamily,
-  // genus: mushroomGenus,
-  // species: mushroomSpecies,
+
+  function handleEditSave() {
+    if(mushroomName !== ""){
+      existingMushroom[0].name = mushroomName;
+    }
+    if(mushroomDescription !== ""){
+      existingMushroom[0].description = mushroomDescription;
+    }
+    if(mushroomFamily !== ""){
+      existingMushroom[0].family = mushroomFamily;
+    }
+    if(mushroomGenus !== ""){
+      existingMushroom[0].genus = mushroomGenus;
+    }
+    if(mushroomSpecies !== ""){
+      existingMushroom[0].species = mushroomSpecies;
+    }   
+
+    API.editMushroom(existingMushroom[0]).then(res => {
+      setModalIsOpen(false);
+      context.getMushrooms();
+    }).catch(err => console.log(err));
+  }
+  
+
   return (
     <div className="container">
-      <Modal isOpen={modalIsOpen}>          
+      <Modal isOpen={modalIsOpen} ariaHideApp={false}>          
         <h3>Enter Mushroom Details</h3>
         <br />
         <br />
-        <input value={props.name} onChange={(event) => setMushroomName(event.target.value)}></input>
+        <input defaultValue={props.name} onChange={(event) => setMushroomName(event.target.value)}></input>
         <br />
         <br />
-        <textarea id="desc" value={props.description} onChange={(event) => setMushroomDescription(event.target.value)}></textarea>
+        <textarea defaultValue={props.description} onChange={(event) => setMushroomDescription(event.target.value)}></textarea>
         <br />
         <br />
-        <select value={props.toxic} onChange={(event) => setMushroomIsToxic(event.target.value)}>
+        <select defaultValue={props.toxic} onChange={(event) => setMushroomIsToxic(event.target.value)}>
             <option>
                 Toxic?
             </option>
-            <option value="true">
+            <option value={true}>
                 Yes
             </option>
-            <option value="false">
+            <option value={false}>
                 No
             </option>
         </select>
         <br />
         <br />
-        <input value={props.family} onChange={(event) => setMushroomFamily(event.target.value)}></input>
+        <input defaultValue={props.family} onChange={(event) => setMushroomFamily(event.target.value)}></input>
         <br />
         <br />
-        <input value={props.genus} onChange={(event) => setMushroomGenus(event.target.value)}></input>
+        <input defaultValue={props.genus} onChange={(event) => setMushroomGenus(event.target.value)}></input>
         <br />
         <br />
-        <input value={props.species} onChange={(event) => setMushroomSpecies(event.target.value)}></input>
+        <input defaultValue={props.species} onChange={(event) => setMushroomSpecies(event.target.value)}></input>
         <br />
         <br />
         <button onClick={() => setModalIsOpen(false)}>Close</button>
@@ -103,7 +110,7 @@ function ProductCard(props) {
         </div>
         <div className="col-md-9">
           <div className="card text-center">
-            <div className="card-header">{props.name}{auth.isAdmin && (<button onClick={handleDelete} className="btn btn-danger float-right"><i className="fas fa-trash-alt"></i></button>)}{auth.isAdmin && (<button onClick={handleEditButton} className="btn btn-info float-right"><i className="fas fa-edit"></i></button>)}</div>
+            <h3 className="card-header">{props.name}{auth.isAdmin && (<button onClick={handleDelete} className="btn btn-danger float-right"><i className="fas fa-trash-alt"></i></button>)}{auth.isAdmin && (<button onClick={handleEditButton} className="btn btn-info float-right"><i className="fas fa-edit"></i></button>)}</h3>
             <div className="card-body">
               <div className="card-title"></div>
               <p className="card-text">{props.description}</p>
