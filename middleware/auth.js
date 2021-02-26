@@ -13,7 +13,11 @@ module.exports = (req, res, next) => {
         }
 
         let decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-        req.userData = {userID: decodedToken.userID, isAdmin: decodedToken.isAdmin}
+        
+        if(!decodedToken.isAdmin){
+            throw new Error("Authentication Failed!");
+        }
+
         next();
     }catch (err) {
         console.log(err);
