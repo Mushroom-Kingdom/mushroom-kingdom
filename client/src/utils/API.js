@@ -35,8 +35,14 @@ export default {
     return axios.post("/auth/admin/login", adminCredentials);
   },
 
-  passwordReset: function(email) {
+  passwordReset: function (email) {
     return axios.post("/auth/resetpassword", email);
-  }
+  },
 
+  uploadImage: function (formData) {
+    return axios.post(
+      "https://api.cloudinary.com/v1_1/djdhvwysz/image/upload",
+      formData
+    );
+  },
 };
