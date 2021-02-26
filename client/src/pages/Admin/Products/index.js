@@ -29,6 +29,7 @@ function AdminProducts(props) {
         context.getMushrooms();
       }, []);
 
+    // Function to save a mushroom to the database
     function handleMushroomSubmit(event) {
         event.preventDefault();
         const newMushroom = {
