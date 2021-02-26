@@ -44,3 +44,13 @@
 .right-row{
     text-align: right;
 }
+
+#front {
+    color: purple;
+    font-weight: bold;
+}
+
+#care {
+    color:blue;
+    font-weight: bold;
+}
