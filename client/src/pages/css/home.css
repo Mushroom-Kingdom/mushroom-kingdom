@@ -65,3 +65,7 @@
     font-size: 100px;
     text-shadow: 4px 4px black;
 }
+
+#kingdom {
+    opacity: 0.7;
+}

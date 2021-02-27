@@ -24,4 +24,13 @@
 
 .about #section #paragraph-image{
     float: left;
+    
+}
+
+#statemh {
+    text-align: center;
+}
+
+#head {
+    margin: auto;
 }
