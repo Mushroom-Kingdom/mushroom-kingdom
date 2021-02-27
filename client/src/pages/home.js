@@ -19,7 +19,7 @@ function Home() {
     <div className="home">
       <Carousel>
         <Carousel.Item>
-          <img
+          <img id="kingdom"
             // className="d-block w-100"
             src={king}
             alt="First slide"
