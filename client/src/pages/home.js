@@ -102,29 +102,40 @@ function Home() {
           </Col>
         </Row>
         <hr className="features-divider"></hr>
-        <Row className="right-row">
+        <Row className="left-row">
+          <Col md={7} lg={7}>
+            <h2>Local and Organic</h2>
+            <p>
+              Everything that we sell is organically produced by New Mexicans
+              for New Mexicans.
+            </p>
+          </Col>
           <Col md={5} lg={5}>
             <Image
-              src={chat}
+              src={newmexico}
               fluid
               mx-auto
               style={{ width: "500px", height: "500px" }}
             ></Image>
           </Col>
-          <Col md={7} lg={7}>
-            <h2>Contact Us!</h2>
-            <p>
-              <h4>Instagram</h4>
-              <a href="https://www.instagram.com/">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <br />
-              <h4>Email</h4>
-              <a href="mailto: paschnick100@gmail.com">
-                <i class="fas fa-envelope-square"></i>
-              </a>
-              <br />
-            </p>
+        </Row>
+        <hr className="features-divider"></hr>
+        <h1>Contact Us:</h1>
+        <Row className="right-row">
+          <Col md={4} lg={4}>
+            <div style={{fontSize:"40px"}}>
+              <i class="fab fa-snapchat-square fa-8x"></i>
+            </div>
+          </Col>
+          <Col md={4} lg={4}>
+            <div style={{fontSize:"40px"}}>
+              <i class="fab fa-instagram fa-8x"></i>
+            </div>
+          </Col>
+          <Col md={4} lg={4}>
+            <div style={{fontSize:"40px"}}>
+              <i class="fas fa-envelope-square fa-8x"></i>
+            </div>
           </Col>
         </Row>
       </Container>
