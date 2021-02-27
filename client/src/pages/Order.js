@@ -12,6 +12,7 @@ function Order() {
     <Form className="order">
       <Form.Group controlId="Name">
         <Form.Label>Name</Form.Label>
+
         <Form.Control type="name" placeholder="full name" />
       </Form.Group>
       <Form.Group controlId="Email">

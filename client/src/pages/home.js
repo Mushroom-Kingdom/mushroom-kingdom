@@ -87,9 +87,8 @@ function Home() {
         <Row className="left-row">
           <Col md={7} lg={7}>
             <h2>Local and Organic</h2>
-            <p>
-              Everything that we sell is organically produced by New Mexicans
-              for New Mexicans.
+            <p id="local">
+              Everything for sale is produced by Albuquerque natives FOR Albuquerque natives. Our produce is 100% organic and we strive to produce as little waste as we possibly can and we see to it that our used biomass is recycled and repurposed.  
             </p>
           </Col>
           <Col md={5} lg={5}>
@@ -101,24 +100,7 @@ function Home() {
             ></Image>
           </Col>
         </Row>
-        <hr className="features-divider"></hr>
-        <Row className="left-row">
-          <Col md={7} lg={7}>
-            <h2>Local and Organic</h2>
-            <p>
-              Everything that we sell is organically produced by New Mexicans
-              for New Mexicans.
-            </p>
-          </Col>
-          <Col md={5} lg={5}>
-            <Image
-              src={newmexico}
-              fluid
-              mx-auto
-              style={{ width: "500px", height: "500px" }}
-            ></Image>
-          </Col>
-        </Row>
+
         <hr className="features-divider"></hr>
         <h1>Contact Us:</h1>
         <Row className="right-row">
@@ -138,6 +120,8 @@ function Home() {
             </div>
           </Col>
         </Row>
+
+
       </Container>
     </div>
   );
