@@ -15,19 +15,24 @@ function About() {
       <div id="section">
         <h1>OUR MISSION</h1>
         <p id="paragraph">
-          Our mission at the Mushroom Kingdom is simple: to provide high
-              quality mushrooms for an affordable price.{" "}
+          Our mission at the Mushroom Kingdom is simple: to provide high quality
+          mushrooms for an affordable price.{" "}
         </p>
-
       </div>
       <div id="section">
-
         <img src={image1} width="960" height="500" alt=""></img>
 
         <br />
-        
+
         <h1>History</h1>
-        <img id="paragraph-image" src={image1} width="300" height="300" alt=""></img>
+        <img
+          id="paragraph-image"
+          class="mr-3"
+          src={image1}
+          width="300"
+          height="300"
+          alt=""
+        ></img>
         <p id="paragraph">
           The Mushroom Kingdom has modest beginnings with two friends from high
           school, Nick Pasch and Bryce Van Note, searching for their calling in
@@ -41,14 +46,21 @@ function About() {
           the highest quality fungus for affordable rates, an obstacle we hope
           to overcome with evermore success.
         </p>
-        
+
         <br />
         <br />
         <br />
         <br />
 
         <h1 class="center">How We Grow</h1>
-        <img id="paragraph-image" src={image1} width="300" height="300" alt=""></img>
+        <img
+          id="paragraph-image"
+          class="mr-3"
+          src={image1}
+          width="300"
+          height="300"
+          alt=""
+        ></img>
         <p id="paragraph">
           Our entirely organic mushroom farm operates using techniques that were
           popularized in the past few decades. We begin by using organic Wild
@@ -67,10 +79,6 @@ function About() {
           of the process.
         </p>
         <br />
-        <h1>Section</h1>
-        <p id="paragraph">
-          Comming soon!
-        </p>
       </div>
     </div>
   );
