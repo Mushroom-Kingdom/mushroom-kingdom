@@ -12,10 +12,10 @@ function Order() {
     <Form className="order">
       <Form.Group controlId="Name">
         <Form.Label>Name</Form.Label>
-        <Form.Control type="name" placeholder="eg. John Wick" />
+        <Form.Control type="name" placeholder="full name" />
       </Form.Group>
       <Form.Group controlId="Email">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label>Email Address</Form.Label>
         <Form.Control type="email" placeholder="name@example.com" />
       </Form.Group>
       {/* <Form.Group controlId="MushroomList">
@@ -29,11 +29,11 @@ function Order() {
                 </Form.Control>
             </Form.Group> */}
       <Form.Group controlId="Message">
-        <Form.Label>Leave a messages</Form.Label>
+        <Form.Label>Leave a Message</Form.Label>
         <Form.Control
           as="textarea"
           rows={3}
-          placeholder="Tell us which product you want and how much."
+          placeholder="Tell us how much of each product you would like."
         />
       </Form.Group>
       <Button variant="primary" type="submit">
