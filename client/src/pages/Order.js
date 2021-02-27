@@ -33,7 +33,7 @@ function Order() {
         <Form.Control
           as="textarea"
           rows={3}
-          placeholder="Tell us how much of each product you would like."
+          placeholder="Let us know how much of each product you would like."
         />
       </Form.Group>
       <Button variant="primary" type="submit">
