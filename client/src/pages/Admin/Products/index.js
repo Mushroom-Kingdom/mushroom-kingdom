@@ -5,6 +5,7 @@ import ProductCard from "../../../components/ProductCard/ProductCard";
 import AuthenticationContext from "../../../contexts/AuthenticationContext";
 import MushroomContext from "../../../contexts/MushroomContext";
 import API from "../../../utils/API";
+import './style.css';
 
 function AdminProducts() {
   // Modal State variables
@@ -93,12 +94,17 @@ function AdminProducts() {
             <h1 className="h2">Products</h1>           
           </div>  
           
-         <section className="products">
+         <section className="Product">
             <button className="btn btn-dark" onClick={() => setModalIsOpen(true)}>
                 Add Mushroom
             </button>
 
-            <Modal isOpen={modalIsOpen} ariaHideApp={false}>
+            <Modal 
+              isOpen={modalIsOpen} 
+              ariaHideApp={false}
+              className="AddModalClass"
+              //overlayClassName="AddOverlay"
+            >
                 <h3>Enter Mushroom Details</h3>
                 <br />
                 <br />
