@@ -5,9 +5,12 @@ import FullList from "./FullList.js";
 
 // import EditModal from '../components/Modal/EditModal.js';
 // import { Button } from 'react-bootstrap';
-var image1 = require("./images/blueOyster.jpg");
+
 var missionImage = require("./images/mario.webp");
 var history = require("./images/history.jpg");
+var lab = require("./images/lab.jpg");
+var vision = require("./images/eye.png");
+
 
 function About() {
   // until this line
@@ -28,14 +31,14 @@ function About() {
         <br />
 
         <div className="row">
-        <div className="col-md-4">
-          </div>
+          <div className="col-md-4"></div>
           <div className="col-md-7">
-        <h1 id="head">History</h1>
+            <h1 id="head">History</h1>
+          </div>
         </div>
-        </div>
-        <br/>
+        <br />
         <div className="row">
+
         <br/>
         <div className="col-md-4">
         
@@ -69,82 +72,77 @@ function About() {
         <br />
         <br />
 
-
         <div className="row">
-        <div className="col-md-8">
-        <h1 id="head">How We Grow</h1>
+          <div className="col-md-8">
+            <h1 id="head">How We Grow</h1>
           </div>
         </div>
-        <br/>
+        <br />
         <div className="row">
-        <br/>
-        
-        <div className="col-md-8">
-        <p id="paragraph">
-            Our entirely organic mushroom farm operates using techniques that were
-            popularized in the past few decades. We begin by using organic Wild
-            Bird Seed, which we rinse clean and let soak for a period of 24 hours.
-            Once this grain had soaked, we sterilize the grain by placing it into
-            jars and pressure cooking it for 2 hours. Once this is complete and
-            the jars have cooled off, we transfer mycelium into the sterile jar in
-            a sterile working environment produced by an air filtration system we
-            built called a laminar flow hood. Once a jar has had mycelium
-            transferred into it, the mycelium grows to occupy the entire jar over
-            a period of about 2 weeks. Once it has fully colonized the jar, it can
-            be used to produce more jars or combined with pasteurized straw to
-            begin fruiting in our self-designed fruiting chamber. Given the
-            optimal conditions that our fruiting room has been designed to
-            maintain, we fruit beautiful mushrooms roughly 4 weeks after the start
-            of the process.
-          </p>
+          <br />
 
-        </div>
-        <div className="col-md-4">
-        <img
-          id="paragraph-image"
-          class="mr-3"
-          src={image1}
-          width="300"
-          height="300"
-          alt=""
-        ></img>
-        </div>
+          <div className="col-md-8">
+            <p id="paragraph">
+              Our entirely organic mushroom farm operates using techniques that
+              were popularized in the past few decades. We begin by using
+              organic Wild Bird Seed, which we rinse clean and let soak for a
+              period of 24 hours. Once this grain had soaked, we sterilize the
+              grain by placing it into jars and pressure cooking it for 2 hours.
+              Once this is complete and the jars have cooled off, we transfer
+              mycelium into the sterile jar in a sterile working environment
+              produced by an air filtration system we built called a laminar
+              flow hood. Once a jar has had mycelium transferred into it, the
+              mycelium grows to occupy the entire jar over a period of about 2
+              weeks. Once it has fully colonized the jar, it can be used to
+              produce more jars or combined with pasteurized straw to begin
+              fruiting in our self-designed fruiting chamber. Given the optimal
+              conditions that our fruiting room has been designed to maintain,
+              we fruit beautiful mushrooms roughly 4 weeks after the start of
+              the process.
+            </p>
+          </div>
+          <div className="col-md-4">
+            <img
+              id="paragraph-image"
+              class="mr-3"
+              src={lab}
+              width="300"
+              height="300"
+              alt=""
+            ></img>
+          </div>
         </div>
 
         <br />
         <br />
 
         <div className="row">
-        <div className="col-md-4">
-          </div>
+          <div className="col-md-4"></div>
           <div className="col-md-7">
-        <h1 id="head">Our Vision</h1>
+            <h1 id="head">Our Vision</h1>
+          </div>
         </div>
-        </div>
-        <br/>
+        <br />
         <div className="row">
-        <br/>
-        <div className="col-md-4">
-        
-        <img
-            id="paragraph-image"
-            class="mr-3"
-            src={image1}
-            width="300"
-            height="300"
-            alt=""
-          ></img>
-        </div>
-        <div className="col-md-8">
-          <br/>
-        <p id="paragraph">
+
+          <br />
+          <div className="col-md-4">
+            <img
+              id="paragraph-image"
+              class="mr-3"
+              src={vision}
+              width="300"
+              height="300"
+              alt=""
+            ></img>
+          </div>
+          <div className="col-md-8">
+            <br />
+            <p id="paragraph">
           With the glimpse of our values provided above, it should serve as no surprise that we have a very optimistic vision and that we are quite excited for the future and all of the progress that we are privileged to contribute to. We want to begin by expanding our repertoire to comprise of virtually all edible mushrooms. Once we have achieved this, we intend to begin researching all the possible applications mushrooms have with regard to helping humanity (hunger, ecosystems, climate). Long term, we have a vision of installing massive fungal networks throughout the world that would hopefully be multi-faceted in their utility, the benefits of which would hopefully extend at the very least to hunger and the environment.
         </p>
+          </div>
         </div>
-        </div>
-
-
-        
       </div>
     </div>
   );

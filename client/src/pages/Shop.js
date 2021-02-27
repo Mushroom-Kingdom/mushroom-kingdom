@@ -17,12 +17,14 @@ function Shop() {
 
   return (
     <div className="shop">
+
       <div className="row">
       <div className="col-md-2"></div>
         <div className="col-md-8">
           <Link to="/order"><Button id="but" variant="success">Order</Button></Link>
         </div>
         </div>
+
       <div className="container theList">
         {mushrooms.map((mushroom) => {
           return (
