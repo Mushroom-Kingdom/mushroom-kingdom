@@ -4,6 +4,7 @@ import "./css/shop.css";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
 import MushroomContext from "../contexts/MushroomContext";
+import {Button} from 'react-bootstrap';
 
 function Shop() {
   const [mushrooms, setMushrooms] = useState([]);
@@ -16,7 +17,7 @@ function Shop() {
 
   return (
     <div className="shop">
-      <Link to="/order"><button id="but" >Order</button></Link>
+          <Link to="/order"><Button id="but" variant="success">Order</Button></Link>
       <div className="container theList">
         {mushrooms.map((mushroom) => {
           return (
