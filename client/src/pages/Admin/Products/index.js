@@ -5,6 +5,7 @@ import ProductCard from "../../../components/ProductCard/ProductCard";
 import AuthenticationContext from "../../../contexts/AuthenticationContext";
 import MushroomContext from "../../../contexts/MushroomContext";
 import API from "../../../utils/API";
+import './style.css';
 
 function AdminProducts() {
   // Modal State variables
@@ -98,7 +99,12 @@ function AdminProducts() {
                 Add Mushroom
             </button>
 
-            <Modal isOpen={modalIsOpen} ariaHideApp={false}>
+            <Modal 
+              isOpen={modalIsOpen} 
+              ariaHideApp={false}
+              className="AddModalClass"
+              //overlayClassName="AddOverlay"
+            >
                 <h3>Enter Mushroom Details</h3>
                 <br />
                 <br />
