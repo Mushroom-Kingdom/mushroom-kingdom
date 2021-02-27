@@ -28,7 +28,6 @@ import AdminLogin from "./pages/Admin/Login";
 import AdminDashboard from "./pages/Admin/Dashboard";
 import AdminOrders from "./pages/Admin/Orders";
 import AdminProducts from "./pages/Admin/Products";
-import Members from "./pages/Members";
 import NoMatch from "./pages/NoMatch";
 import Order from "./pages/Order";
 
@@ -97,9 +96,6 @@ const App = () => {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/members">
-          <Members />
-        </Route>
         <Route path="/about">
           <About />
         </Route>
@@ -109,7 +105,7 @@ const App = () => {
         <Route path="/order">
           <Order />
         </Route>
-        <Redirect to="/members" />
+        <Redirect to="/shop" />
       </Switch>
     );
   }
