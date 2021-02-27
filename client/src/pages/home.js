@@ -23,6 +23,7 @@ function Home() {
               alt="First slide"
               width="100%"
               height="100%"
+              id="kingdom"
             />
             <Carousel.Caption>
               <h1 id="front">Welcome to the Mushroom Kingdom</h1>

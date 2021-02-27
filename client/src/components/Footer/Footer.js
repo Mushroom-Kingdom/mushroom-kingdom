@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import './footer.css';
 
+
+var mig = require("../../pages/images/dirt.png");
+
 const Footer = () =>{
     return(
         <div>

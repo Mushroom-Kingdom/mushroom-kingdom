@@ -48,7 +48,7 @@ function About() {
         <br />
 
         <h1 class="center">How We Grow</h1>
-        <img id="paragraph-image" src={image1} width="300" height="300" alt=""></img>
+        <img id="paragraph-image" src="https://www.carlsonstockart.com/images/xl/Mushroom-Life-Cycle-1.jpg" width="300" height="300" alt=""></img>
         <p id="paragraph">
           Our entirely organic mushroom farm operates using techniques that were
           popularized in the past few decades. We begin by using organic Wild
