@@ -116,7 +116,7 @@ function ProductCard(props) {
       </Modal>
       <div className="row">
         <div className="col-md-3">
-          <img src={props.image_url} width="100%" />
+          <img src={props.image_url} width="250px" height="200px" />
         </div>
         <div className="col-md-9">
           <div className="card text-center">
