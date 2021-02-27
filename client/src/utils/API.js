@@ -7,15 +7,24 @@ export default {
   },
   // Gets the mushroom with the given id
   getMushroomId: function (id) {
-    return axios.get("/api/mushroom/" + id);
+    return axios.get("/api/mushrooms/" + id);
   },
-  // Deletes the mushroom with the given id
-  deleteMushroom: function (id) {
-    return axios.delete("/api/mushroom/" + id);
+  // Deletes the mushroom with the given id, requires authentication
+  deleteMushroom: function (id, token) {
+    return axios.delete("/api/mushrooms/" + id, {
+      headers: { authorization: `BEARER ${token}`}
+    });
+  },
+  editMushroom: function (mushroomData, token) {
+    return axios.put(`/api/mushrooms/${mushroomData._id}`, mushroomData, {
+      headers: { authorization: `BEARER ${token}`}
+    });
   },
   // Saves a mushroom to the database
-  saveMushroom: function (mushroomData) {
-    return axios.post("/api/mushroom", mushroomData);
+  saveMushroom: function (mushroomData, token) {
+    return axios.post("/api/mushrooms/", mushroomData, {
+      headers: { authorization: `BEARER ${token}`}
+    });
   },
 
   // AUTHENTICATION FUNCTIONS
@@ -30,5 +39,16 @@ export default {
 
   loginAdmin: function (adminCredentials) {
     return axios.post("/auth/admin/login", adminCredentials);
+  },
+
+  passwordReset: function (email) {
+    return axios.post("/auth/resetpassword", email);
+  },
+
+  uploadImage: function (formData) {
+    return axios.post(
+      "https://api.cloudinary.com/v1_1/djdhvwysz/image/upload",
+      formData
+    );
   },
 };
