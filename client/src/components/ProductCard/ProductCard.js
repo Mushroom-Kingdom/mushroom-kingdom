@@ -4,7 +4,7 @@ import MushroomContext from "../../contexts/MushroomContext";
 import API from "../../utils/API";
 import "./productcard.css";
 import Modal from "react-modal";
-
+import '../../pages/Admin/Products/style.css';
 // var blue = require("../../pages/images/blueOyster.jpg");
 let existingMushroom = {};
 
@@ -65,7 +65,12 @@ function ProductCard(props) {
 
   return (
     <div className="container">
-      <Modal isOpen={modalIsOpen} ariaHideApp={false}>
+      <Modal 
+        isOpen={modalIsOpen} 
+        ariaHideApp={false}
+        className="AddModalClass"
+        overlayClassName="AddOverlay"
+      >
         <h3>Enter Mushroom Details</h3>
         <br />
         <br />
@@ -75,7 +80,9 @@ function ProductCard(props) {
         ></input>
         <br />
         <br />
+
         <textarea
+          id="desc"
           defaultValue={props.description}
           onChange={(event) => setMushroomDescription(event.target.value)}
         ></textarea>
@@ -118,7 +125,7 @@ function ProductCard(props) {
         <div className="col-md-3">
           <img src={props.image_url} width="250px" height="200px" />
         </div>
-        <div className="col-md-9">
+        <div id="product-card" className="col-md-9">
           <div className="card text-center">
             <h3 className="card-header">
               {props.name}
