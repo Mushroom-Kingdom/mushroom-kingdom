@@ -24,6 +24,7 @@ function Shop() {
               key={mushroom._id}
               name={mushroom.name}
               description={mushroom.description}
+              image_url={mushroom.image_url}
               family={mushroom.family}
               genus={mushroom.genus}
               species={mushroom.species}
