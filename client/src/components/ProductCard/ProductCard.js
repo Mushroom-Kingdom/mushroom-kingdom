@@ -118,7 +118,7 @@ function ProductCard(props) {
         <div className="col-md-3">
           <img src={props.image_url} width="250px" height="200px" />
         </div>
-        <div className="col-md-9">
+        <div id="product-card" className="col-md-9">
           <div className="card text-center">
             <h3 className="card-header">
               {props.name}
