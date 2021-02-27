@@ -8,6 +8,10 @@
     height:100%;
 }
 
+.Product .btn{
+    margin-bottom: 10px;
+}
+
 .AddModalClass{
     position: absolute;
     inset: 40px;

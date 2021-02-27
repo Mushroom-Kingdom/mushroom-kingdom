@@ -94,7 +94,7 @@ function AdminProducts() {
             <h1 className="h2">Products</h1>           
           </div>  
           
-         <section className="products">
+         <section className="Product">
             <button className="btn btn-dark" onClick={() => setModalIsOpen(true)}>
                 Add Mushroom
             </button>
