@@ -19,7 +19,8 @@ function Home() {
     <div className="home">
       <Carousel>
         <Carousel.Item>
-          <img id="kingdom"
+          <img
+            id="kingdom"
             // className="d-block w-100"
             src={king}
             alt="First slide"
@@ -62,7 +63,7 @@ function Home() {
         </Carousel.Item>
       </Carousel>
       <Container>
-        <h2>Where to find us!</h2>
+        <h2>Where to Find Us</h2>
         <Row>
           <Col md={4} lg={4}>
             {/* <h2>RangeMe</h2>
@@ -88,7 +89,10 @@ function Home() {
           <Col md={7} lg={7}>
             <h2>Local and Organic</h2>
             <p id="local">
-              Everything for sale is produced by Albuquerque natives FOR Albuquerque natives. Our produce is 100% organic and we strive to produce as little waste as we possibly can and we see to it that our used biomass is recycled and repurposed.  
+              Everything for sale is produced by Albuquerque natives FOR
+              Albuquerque natives. Our produce is 100% organic and we strive to
+              produce as little waste as we possibly can and we see to it that
+              our used biomass is recycled and repurposed.
             </p>
           </Col>
           <Col md={5} lg={5}>
@@ -102,26 +106,24 @@ function Home() {
         </Row>
 
         <hr className="features-divider"></hr>
-        <h1>Contact Us:</h1>
+        <h1>Contact Us</h1>
         <Row className="right-row">
           <Col md={4} lg={4}>
-            <div style={{fontSize:"40px"}}>
+            <div style={{ fontSize: "40px" }}>
               <i class="fab fa-snapchat-square fa-8x"></i>
             </div>
           </Col>
           <Col md={4} lg={4}>
-            <div style={{fontSize:"40px"}}>
+            <div style={{ fontSize: "40px" }}>
               <i class="fab fa-instagram fa-8x"></i>
             </div>
           </Col>
           <Col md={4} lg={4}>
-            <div style={{fontSize:"40px"}}>
+            <div style={{ fontSize: "40px" }}>
               <i class="fas fa-envelope-square fa-8x"></i>
             </div>
           </Col>
         </Row>
-
-
       </Container>
     </div>
   );
