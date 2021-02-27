@@ -115,7 +115,7 @@ function Home() {
             <h2>Contact Us!</h2>
             <p>
               <h4>Instagram</h4>
-              <a href="https://github.com/selma-e">
+              <a href="https://www.instagram.com/">
                 <i class="fab fa-instagram"></i>
               </a>
               <br />
