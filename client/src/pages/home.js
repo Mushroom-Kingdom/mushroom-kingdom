@@ -87,9 +87,8 @@ function Home() {
         <Row className="left-row">
           <Col md={7} lg={7}>
             <h2>Local and Organic</h2>
-            <p>
-              Everything that we sell is organically produced by New Mexicans
-              for New Mexicans.
+            <p id="local">
+              Everything for sale is produced by Albuquerque natives FOR Albuquerque natives. Our produce is 100% organic and we strive to produce as little waste as we possibly can and we see to it that our used biomass is recycled and repurposed.  
             </p>
           </Col>
           <Col md={5} lg={5}>
@@ -102,8 +101,10 @@ function Home() {
           </Col>
         </Row>
         <hr className="features-divider"></hr>
+
+
         <Row className="right-row">
-          <Col md={5} lg={5}>
+          <Col md={4} lg={4}>
             <Image
               src={chat}
               fluid
@@ -111,7 +112,23 @@ function Home() {
               style={{ width: "500px", height: "500px" }}
             ></Image>
           </Col>
-          <Col md={7} lg={7}>
+          <Col md={4} lg={4}>
+            <Image
+              src={chat}
+              fluid
+              mx-auto
+              style={{ width: "500px", height: "500px" }}
+            ></Image>
+          </Col>
+          <Col md={4} lg={4}>
+            <Image
+              src={chat}
+              fluid
+              mx-auto
+              style={{ width: "500px", height: "500px" }}
+            ></Image>
+          </Col>
+          {/* <Col md={7} lg={7}>
             <h2>Contact Us!</h2>
             <p>
               <h4>Instagram</h4>
@@ -125,8 +142,10 @@ function Home() {
               </a>
               <br />
             </p>
-          </Col>
+          </Col> */}
         </Row>
+
+
       </Container>
     </div>
   );

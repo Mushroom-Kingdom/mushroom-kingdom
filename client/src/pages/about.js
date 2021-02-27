@@ -6,6 +6,8 @@ import FullList from "./FullList.js";
 // import EditModal from '../components/Modal/EditModal.js';
 // import { Button } from 'react-bootstrap';
 var image1 = require("./images/blueOyster.jpg");
+var missionImage = require("./images/mario.webp");
+var history = require("./images/history.jpg");
 
 function About() {
   // until this line
@@ -15,13 +17,12 @@ function About() {
       <div id="section">
         <h1>OUR MISSION</h1>
         <p id="statem">
-          Our mission at the Mushroom Kingdom is simple: to provide high quality
-          mushrooms for an affordable price.{" "}
+          Our mission at the mushroom kingdom is to uplift humanity to the best of our ability, which means doing anything and everything we can. We believe that there are major problems in the world and that many of these problems have solutions that are simpler than most would make their solutions out to be. Understanding our inexcusable obligation to make both our immediate and entire environment as perfect as we possibly can has lead us to ensure that these remain our core values regardless of how big the kingdom grows. 
         </p>
       </div>
       <br />
       <div id="section">
-        <img src={image1} width="960" height="500" alt=""></img>
+        <img src={history} width="50%" height="50%" alt=""></img>
         <br />
         <br />
         <br />
@@ -41,9 +42,9 @@ function About() {
         <img
           id="paragraph-image"
           class="mr-3"
-          src={image1}
-          width="300"
-          height="300"
+          src={missionImage}
+          width="80%"
+          height="100%"
           alt=""
         ></img>
         </div>
@@ -112,7 +113,6 @@ function About() {
 
         <br />
         <br />
-        <br />
 
         <div className="row">
         <div className="col-md-4">
@@ -138,17 +138,7 @@ function About() {
         <div className="col-md-8">
           <br/>
         <p id="paragraph">
-          The Mushroom Kingdom has modest beginnings with two friends from high
-          school, Nick Pasch and Bryce Van Note, searching for their calling in
-          a pandemic-stricken world. Nick had just dropped out of college and
-          Bryce had just graduated high school, and the two were eager to begin
-          working. What ensued was a period of informal research and
-          experimentation with many different avenues of interest, one of which
-          being mushrooms. After growing as hobbyists for some months and
-          acquiring vast knowledge and experience growing mushrooms, we decided
-          to begin this mushroom farm. Now we face the challenge of producing
-          the highest quality fungus for affordable rates, an obstacle we hope
-          to overcome with evermore success.
+          With the glimpse of our values provided above, it should serve as no surprise that we have a very optimistic vision and that we are quite excited for the future and all of the progress that we are privileged to contribute to. We want to begin by expanding our repertoire to comprise of virtually all edible mushrooms. Once we have achieved this, we intend to begin researching all the possible applications mushrooms have with regard to helping humanity (hunger, ecosystems, climate). Long term, we have a vision of installing massive fungal networks throughout the world that would hopefully be multi-faceted in their utility, the benefits of which would hopefully extend at the very least to hunger and the environment.
         </p>
         </div>
         </div>
